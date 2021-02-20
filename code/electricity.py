@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from bs4 import BeautifulSoup
 import time
 import requests
 
@@ -35,7 +36,9 @@ def getElectricity():
     electricity_record.click()
     login=WAIT.until(EC.element_to_be_clickable((By.ID,'ImageButton1')))
     login.click()
+    
+    # html=driver.page_source
+    # soup=BeautifulSoup(html,'lxml')
+    # print(soup)
     remaining_battery=WAIT.until(EC.presence_of_element_located((By.XPATH,'/html/body/form/div[3]/div[2]/div[1]/h6/span[1]')))
     return remaining_battery.text
-
-print(getElectricity())
