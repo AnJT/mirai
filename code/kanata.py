@@ -12,6 +12,7 @@ import random
 from graia.application.interrupts import GroupMessageInterrupt
 from startup import bcc,inc,app,scheduler,loop
 from xiaolan import chat
+from electricity import getElectricity
 from graia.scheduler.timers import crontabify
 import json
 
@@ -24,14 +25,11 @@ async def group_message_database_handler(
 ):  
     f=open('mydata.json')
     data=json.load(f)
-    data.setdefault('group',{})
-    data.setdefault('friend',{})
-    data['group'][group.id]=group.id
-    data['friend'][member.id]=member.id
-    # print(data)
+    data['group'][str(group.id)]=group.id
+    data['friend'][str(member.id)]=member.id
+    print(data)
     with open('mydata.json','w') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
-    f.close()
 
 
 @bcc.receiver("GroupMessage",dispatchers=[
@@ -54,6 +52,21 @@ async def ddl_scheduled():
         At(342472121),Plain("时间到了！")
     ]))
     f.close()
+
+@bcc.receiver("GroupMessage")
+async def group_message_database_handler(
+    message: MessageChain,
+    app: GraiaMiraiApplication,
+    group: Group, member: Member,
+):  
+    if not group.id==1020661362:
+        return
+    if message.asDisplay().startswith('电费'):
+        elec=getElectricity()
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain(elec)
+        ]))
+
 
 @bcc.receiver("GroupMessage", dispatchers=[
     # 注意是 dispatcher, 不要和 headless_decorator 混起来
@@ -108,7 +121,7 @@ async def group_message_handler(
 ):  
     content=message.asDisplay()
     index=str(group.id)+str(member.id)
-    if content.startswith("来点") or content.startswith("选择") or content.startswith("ddl"):
+    if content.startswith("来点") or content.startswith("选择") or content.startswith("ddl") or content.startswith("电费"):
         return
 
     f=open('mydata.json')
@@ -131,7 +144,6 @@ async def group_message_handler(
 
     with open('mydata.json','w') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
-    f.close()
 
 app.launch_blocking()
 loop.run_forever()

@@ -1,0 +1,85 @@
+[0m2021-02-20 00:01:09 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:01:09 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:04:24 V/Net 246987206: Channel closed.[0m
+[0m2021-02-20 00:04:24 V/Net 246987206: Loading BdhSession from cache file[0m
+[92m2021-02-20 00:04:24 I/Net 246987206: Connected to server 111.30.178.182:80[0m
+[0m2021-02-20 00:04:24 V/Net 246987206: Send: wtlogin.login[0m
+[0m2021-02-20 00:04:25 V/Net 246987206: Recv: LoginPacketResponse.Success[0m
+[92m2021-02-20 00:04:25 I/Net 246987206: Login successful[0m
+[0m2021-02-20 00:04:25 V/Net 246987206: Send: StatSvc.register[0m
+[0m2021-02-20 00:04:25 V/Net 246987206: Recv: Response(StatSvc.register)[0m
+[92m2021-02-20 00:04:25 I/Net 246987206: Scheduled key refresh in 5h 55min 0.0s.[0m
+[92m2021-02-20 00:04:25 I/Net 246987206: Syncing friend message history...[0m
+[0m2021-02-20 00:04:25 V/Net 246987206: Send: MessageSvc.PbGetMsg[0m
+[0m2021-02-20 00:04:25 V/Net 246987206: Send: MessageSvc.PbDeleteMsg[0m
+[92m2021-02-20 00:04:25 I/Net 246987206: Syncing friend message history: Success.[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Recv: ConfigPushSvc.PushReq.PushReqResponse.ServerListPush[0m
+[92m2021-02-20 00:04:28 I/Net 246987206: Server list updated.[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Saving bdh session to cache[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Saving server list to cache[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Send: ConfigPushSvc.PushResp[0m
+[96m2021-02-20 00:04:28 D/Net 246987206: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Recv: ConfigPushSvc.PushReq.PushReqResponse.ConfigPush[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Saving bdh session to cache[0m
+[0m2021-02-20 00:04:28 V/Net 246987206: Send: ConfigPushSvc.PushResp[0m
+[0m2021-02-20 00:08:55 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:08:55 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:13:25 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:13:25 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:17:55 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:17:55 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:21:10 V/Net 246987206: Channel closed.[0m
+[0m2021-02-20 00:21:10 V/Net 246987206: Loading BdhSession from cache file[0m
+[92m2021-02-20 00:21:10 I/Net 246987206: Connected to server 109.244.154.202:8080[0m
+[0m2021-02-20 00:21:10 V/Net 246987206: Send: wtlogin.login[0m
+[0m2021-02-20 00:21:11 V/Net 246987206: Recv: LoginPacketResponse.Success[0m
+[92m2021-02-20 00:21:11 I/Net 246987206: Login successful[0m
+[0m2021-02-20 00:21:11 V/Net 246987206: Send: StatSvc.register[0m
+[0m2021-02-20 00:21:11 V/Net 246987206: Recv: Response(StatSvc.register)[0m
+[92m2021-02-20 00:21:11 I/Net 246987206: Scheduled key refresh in 5h 55min 0.0s.[0m
+[92m2021-02-20 00:21:11 I/Net 246987206: Syncing friend message history...[0m
+[0m2021-02-20 00:21:11 V/Net 246987206: Send: MessageSvc.PbGetMsg[0m
+[0m2021-02-20 00:21:11 V/Net 246987206: Send: MessageSvc.PbDeleteMsg[0m
+[92m2021-02-20 00:21:11 I/Net 246987206: Syncing friend message history: Success.[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Recv: ConfigPushSvc.PushReq.PushReqResponse.ServerListPush[0m
+[92m2021-02-20 00:21:14 I/Net 246987206: Server list updated.[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Saving bdh session to cache[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Saving server list to cache[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Send: ConfigPushSvc.PushResp[0m
+[96m2021-02-20 00:21:14 D/Net 246987206: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Recv: ConfigPushSvc.PushReq.PushReqResponse.ConfigPush[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Saving bdh session to cache[0m
+[0m2021-02-20 00:21:14 V/Net 246987206: Send: ConfigPushSvc.PushResp[0m
+[0m2021-02-20 00:25:41 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:25:41 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:30:11 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:30:11 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:34:41 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:34:41 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:37:55 V/Net 246987206: Channel closed.[0m
+[0m2021-02-20 00:37:55 V/Net 246987206: Loading BdhSession from cache file[0m
+[92m2021-02-20 00:37:55 I/Net 246987206: Connected to server 14.22.3.114:14000[0m
+[0m2021-02-20 00:37:55 V/Net 246987206: Send: wtlogin.login[0m
+[0m2021-02-20 00:37:56 V/Net 246987206: Recv: LoginPacketResponse.Success[0m
+[92m2021-02-20 00:37:56 I/Net 246987206: Login successful[0m
+[0m2021-02-20 00:37:56 V/Net 246987206: Send: StatSvc.register[0m
+[0m2021-02-20 00:37:56 V/Net 246987206: Recv: Response(StatSvc.register)[0m
+[92m2021-02-20 00:37:56 I/Net 246987206: Scheduled key refresh in 5h 55min 0.0s.[0m
+[92m2021-02-20 00:37:56 I/Net 246987206: Syncing friend message history...[0m
+[0m2021-02-20 00:37:56 V/Net 246987206: Send: MessageSvc.PbGetMsg[0m
+[0m2021-02-20 00:37:56 V/Net 246987206: Send: MessageSvc.PbDeleteMsg[0m
+[92m2021-02-20 00:37:56 I/Net 246987206: Syncing friend message history: Success.[0m
+[96m2021-02-20 00:37:59 D/Net 246987206: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Recv: ConfigPushSvc.PushReq.PushReqResponse.ConfigPush[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Saving bdh session to cache[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Send: ConfigPushSvc.PushResp[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Recv: ConfigPushSvc.PushReq.PushReqResponse.ServerListPush[0m
+[92m2021-02-20 00:37:59 I/Net 246987206: Server list updated.[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Saving bdh session to cache[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Saving server list to cache[0m
+[0m2021-02-20 00:37:59 V/Net 246987206: Send: ConfigPushSvc.PushResp[0m
+[0m2021-02-20 00:42:26 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:42:26 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:46:56 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-02-20 00:46:56 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
+[0m2021-02-20 00:48:01 V/Net 246987206: Channel closed.[0m
