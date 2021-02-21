@@ -27,7 +27,7 @@ async def group_message_database_handler(
     data=json.load(f)
     data['group'][str(group.id)]=group.id
     data['friend'][str(member.id)]=member.id
-    print(data)
+    # print(data)
     with open('mydata.json','w') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
