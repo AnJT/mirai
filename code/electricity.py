@@ -10,6 +10,9 @@ import time
 import requests
 
 url='http://202.120.163.129:88/Default.aspx'
+header={
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'
+}
 
 def getElectricity():
     chrome_options = webdriver.ChromeOptions()
