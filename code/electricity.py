@@ -10,15 +10,21 @@ import time
 import requests
 
 url='http://202.120.163.129:88/Default.aspx'
-header={
+headers={
+    'Cookie':'ASP.NET_SessionId=3qqehnbxppz1x3qtjebzobwg',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'
 }
 
 def getElectricity():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.headless=True
+    #这样设置请求头
+    chrome_options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36"')
     driver = webdriver.Chrome(options=chrome_options)
+    # 可恶，这个库不是这样设置请求头
+    # driver.get(url,headers=headers)
     driver.get(url)
+    
     WAIT=WebDriverWait(driver,10)
 
     campus_value='9'
@@ -45,3 +51,6 @@ def getElectricity():
     # print(soup)
     remaining_battery=WAIT.until(EC.presence_of_element_located((By.XPATH,'/html/body/form/div[3]/div[2]/div[1]/h6/span[1]')))
     return remaining_battery.text
+
+if __name__=='__main__':
+    print(getElectricity())
