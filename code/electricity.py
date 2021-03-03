@@ -1,13 +1,13 @@
+import time
+
+import requests
+from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
-from bs4 import BeautifulSoup
-import time
-import requests
+from selenium.webdriver.support.ui import Select, WebDriverWait
 
 url='http://202.120.163.129:88/Default.aspx'
 headers={
@@ -51,6 +51,3 @@ def getElectricity():
     # print(soup)
     remaining_battery=WAIT.until(EC.presence_of_element_located((By.XPATH,'/html/body/form/div[3]/div[2]/div[1]/h6/span[1]')))
     return remaining_battery.text
-
-if __name__=='__main__':
-    print(getElectricity())

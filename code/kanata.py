@@ -1,20 +1,26 @@
 import asyncio
-from graia.application.event.messages import SourceElementDispatcher
-from graia.broadcast import Broadcast
-from graia.application import GraiaMiraiApplication
-from graia.application.message.elements.internal import At, Plain,Image
-from graia.application.session import Session
-from graia.application.message.chain import MessageChain
-from graia.application.group import Group, Member
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import FullMatch, OptionalParam, RequireParam
-import random
-from graia.application.interrupts import GroupMessageInterrupt
-from startup import bcc,inc,app,scheduler,loop
-from xiaolan import chat
-from electricity import getElectricity
-from graia.scheduler.timers import crontabify
 import json
+import random
+from asyncio.windows_events import NULL
+
+from graia.application import GraiaMiraiApplication
+from graia.application.event.messages import SourceElementDispatcher
+from graia.application.group import Group, Member
+from graia.application.interrupts import GroupMessageInterrupt
+from graia.application.message.chain import MessageChain
+from graia.application.message.elements.internal import At, Image, Plain
+from graia.application.message.parser.kanata import Kanata
+from graia.application.message.parser.signature import (FullMatch,
+                                                        OptionalParam,
+                                                        RequireParam)
+from graia.application.session import Session
+from graia.broadcast import Broadcast
+from graia.scheduler.timers import crontabify
+
+from electricity import getElectricity
+from setu import getSetu
+from startup import app, bcc, inc, loop, scheduler
+from xiaolan import chat
 
 
 @bcc.receiver("GroupMessage")
@@ -22,11 +28,12 @@ async def group_message_database_handler(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
-):  
-    f=open('mydata.json')
-    data=json.load(f)
-    data['group'][str(group.id)]=group.id
-    data['friend'][str(member.id)]=member.id
+):
+    data = dict()
+    with open('mydata.json') as f:
+        data=json.load(f)
+        data['group'][str(group.id)]=group.id
+        data['friend'][str(member.id)]=member.id
     # print(data)
     with open('mydata.json','w') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
@@ -78,12 +85,24 @@ async def group_message_laidian_handler(
     group: Group, member: Member,
     saying: MessageChain
 ):
+    img_path='img\\'
     content=saying.asDisplay()
-    img_path="img\\"
+    num_list=[0,1,2]
+
     if "美女" in content or "色图" in content or "涩图" in content:
-        img_path+="s"+str(random.randint(1,5))+'.jpg'
         await app.sendGroupMessage(group, MessageChain.create([
-            At(member.id),Image.fromLocalFile(img_path)
+            At(member.id), Plain("请发送一个从0到2的数字，0为非 R18，1为 R18，2为混合")
+        ]))
+
+        num=await inc.wait(GroupMessageInterrupt(
+            group, member,
+            custom_judgement=lambda x: int(x.messageChain.asDisplay()) in num_list
+        ))
+
+        img_url = await getSetu(int(num.messageChain.asDisplay()))
+
+        await app.sendGroupMessage(group, MessageChain.create([
+            At(member.id),Image.fromNetworkAddress(url=img_url)
         ]))
     elif "猫" in content:
         img_path+="m"+str(random.randint(1,5))+'.jpg'
