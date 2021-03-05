@@ -53,17 +53,6 @@ async def group_message_database_handler(
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
 
-@bcc.receiver("GroupMessage",dispatchers=[
-    Kanata([FullMatch("ddl"),RequireParam(name="saying")])
-])
-async def group_message_ddl_hamdler(
-    message:MessageChain,
-    app:GraiaMiraiApplication,
-    group:Group,member:Member,
-    saying:MessageChain
-):
-    content=saying.asDisplay()
-
 @scheduler.schedule(crontabify("00 07 * * *"))
 async def daily_english_scheduled():
     f=open('mydata.json')
@@ -74,7 +63,7 @@ async def daily_english_scheduled():
     f.close()
 
 @bcc.receiver("GroupMessage")
-async def group_message_database_handler(
+async def group_message_dailyenglish_handler(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -88,7 +77,7 @@ async def group_message_database_handler(
 
 
 @bcc.receiver("GroupMessage")
-async def group_message_database_handler(
+async def group_message_jitang_handler(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -101,7 +90,7 @@ async def group_message_database_handler(
     ]))
 
 @bcc.receiver("GroupMessage")
-async def group_message_database_handler(
+async def group_message_dianfei_handler(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -177,7 +166,7 @@ async def group_message_choice_handler(
     ]))
 
 @bcc.receiver("GroupMessage")
-async def group_message_handler(
+async def group_message_fanyi_handler(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -220,7 +209,7 @@ async def group_message_handler(
 
 
 @bcc.receiver("GroupMessage")
-async def group_message_handler(
+async def group_message_xiaolan_handler(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,

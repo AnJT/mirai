@@ -280,3 +280,5 @@
 [0m2021-03-05 11:01:15 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
 [0m2021-03-05 11:04:00 V/Net 246987206: Send: MessageSvc.PbSendMsg[0m
 [0m2021-03-05 11:04:00 V/Net 246987206: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-03-05 11:05:45 V/Net 246987206: Send: Heartbeat.Alive[0m
+[0m2021-03-05 11:05:45 V/Net 246987206: Recv: Heartbeat.Alive.Response[0m
