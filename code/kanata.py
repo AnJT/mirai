@@ -1,7 +1,7 @@
 import asyncio
 import json
 import random
-from asyncio.windows_events import NULL
+from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY, NULL
 
 from graia.application import GraiaMiraiApplication
 from graia.application.event.messages import SourceElementDispatcher
@@ -17,10 +17,13 @@ from graia.application.session import Session
 from graia.broadcast import Broadcast
 from graia.scheduler.timers import crontabify
 
+from dailyenglish import getDailyenglish
 from electricity import getElectricity
+from fanyi import getFanyi
+from jitang import getJitang
 from setu import getSetu
 from startup import app, bcc, inc, loop, scheduler
-from xiaolan import chat
+from xiaolan import chat, checkxiaolan
 
 
 @bcc.receiver("GroupMessage")
@@ -35,6 +38,17 @@ async def group_message_database_handler(
         data['group'][str(group.id)]=group.id
         data['friend'][str(member.id)]=member.id
     # print(data)
+    index = str(group.id)+str(member.id)
+    if message.asDisplay().startswith("开启青少年模式"):
+        data['r18'][index]=0
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain("懂了")
+        ]))
+    if message.asDisplay().startswith("开启lsp模式"):
+        data['r18'][index]=1
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain("懂了")
+        ]))
     with open('mydata.json','w') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
@@ -50,15 +64,41 @@ async def group_message_ddl_hamdler(
 ):
     content=saying.asDisplay()
 
-@scheduler.schedule(crontabify("23 11 * * *"))
-async def ddl_scheduled():
-    print("11:01")
+@scheduler.schedule(crontabify("00 07 * * *"))
+async def daily_english_scheduled():
     f=open('mydata.json')
     data=json.load(f)
     await app.sendGroupMessage(data['group']["1020661362"], MessageChain.create([
-        At(342472121),Plain("时间到了！")
+        At(342472121),Plain(await getDailyenglish())
     ]))
     f.close()
+
+@bcc.receiver("GroupMessage")
+async def group_message_database_handler(
+    message: MessageChain,
+    app: GraiaMiraiApplication,
+    group: Group, member: Member,
+):  
+    if not group.id==1020661362:
+        return
+    if ''.join(message.asDisplay().lower().strip().split()).startswith("dailyenglish"):
+        await app.sendGroupMessage(group, MessageChain.create([
+            At(member.id),Plain(await getDailyenglish())
+    ]))
+
+
+@bcc.receiver("GroupMessage")
+async def group_message_database_handler(
+    message: MessageChain,
+    app: GraiaMiraiApplication,
+    group: Group, member: Member,
+):  
+    if not group.id==1020661362:
+        return
+    if message.asDisplay().startswith('毒鸡汤'):
+        await app.sendGroupMessage(group, MessageChain.create([
+            At(member.id),Plain(await getJitang())
+    ]))
 
 @bcc.receiver("GroupMessage")
 async def group_message_database_handler(
@@ -88,18 +128,24 @@ async def group_message_laidian_handler(
     img_path='img\\'
     content=saying.asDisplay()
     num_list=[0,1,2]
-
+    index = str(group.id)+str(member.id)
     if "美女" in content or "色图" in content or "涩图" in content:
-        await app.sendGroupMessage(group, MessageChain.create([
-            At(member.id), Plain("请发送一个从0到2的数字，0为非 R18，1为 R18，2为混合")
-        ]))
+        r18=0
+        try:
+            with open('mydata.json') as f:
+                data=json.load(f)
+                r18=int(data['r18'][index])
+        except:
+            await app.sendGroupMessage(group, MessageChain.create([
+                At(member.id), Plain("已默认为您开启青少年模式，若想开启lsp模式，请随时输入“开启lsp模式”")
+            ]))
+            f=open('mydata.json')
+            data=json.load(f)
+            data['r18'][index]=0
+            with open('mydata.json','w') as f:
+                json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
-        num=await inc.wait(GroupMessageInterrupt(
-            group, member,
-            custom_judgement=lambda x: int(x.messageChain.asDisplay()) in num_list
-        ))
-
-        img_url = await getSetu(int(num.messageChain.asDisplay()))
+        img_url = await getSetu(r18)
 
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Image.fromNetworkAddress(url=img_url)
@@ -130,6 +176,47 @@ async def group_message_choice_handler(
         At(member.id),Plain(random.choice(content_list))
     ]))
 
+@bcc.receiver("GroupMessage")
+async def group_message_handler(
+    message: MessageChain,
+    app: GraiaMiraiApplication,
+    group: Group, member: Member,
+):  
+    if message.asDisplay().startswith("翻译"):
+        f=open('mydata.json')
+        data=json.load(f)
+        f.close()
+        data.setdefault("started_fanyi",{})
+
+        index=str(group.id)+str(member.id)
+        data['started_fanyi'][index] = True
+
+        with open('mydata.json','w') as f:
+            json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain("请开始展示你的无知")
+        ]))
+        while True:
+            content=await inc.wait(GroupMessageInterrupt(
+                group, member,
+                custom_judgement=lambda x: x.messageChain.asDisplay() is not None
+            ))
+            if content.messageChain.asDisplay().startswith("结束"):
+                data['started_fanyi'][index] = False
+                break
+            # print(content)
+            
+            index=str(content.sender.group.id)+str(content.sender.id)
+            if data['started_fanyi'][index] == False:
+                continue
+
+            reply = await getFanyi(content.messageChain.asDisplay())
+            await app.sendGroupMessage(group,MessageChain.create([
+                At(content.sender.id),Plain(reply)
+            ]))
+        # print(data)
+        with open('mydata.json','w') as f:
+            json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
 
 @bcc.receiver("GroupMessage")
@@ -140,16 +227,18 @@ async def group_message_handler(
 ):  
     content=message.asDisplay()
     index=str(group.id)+str(member.id)
-    if content.startswith("来点") or content.startswith("选择") or content.startswith("ddl") or content.startswith("电费"):
+
+    check = await checkxiaolan(content,index)
+    if check == False:
         return
 
     f=open('mydata.json')
     data=json.load(f)
     data.setdefault("started_xiaolan",{})
-
+    
     if index in data["started_xiaolan"] and data["started_xiaolan"][index]==True:
         await app.sendGroupMessage(group, MessageChain.create([
-        At(member.id),Plain(chat(content))
+        At(member.id),Plain(await chat(content))
     ]))
     else:
         if message.asDisplay().startswith("小兰小兰"):

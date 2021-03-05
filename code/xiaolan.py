@@ -1,7 +1,38 @@
-import requests,json
+import asyncio
+import json
+
+import requests
 
 url='http://openapi.tuling123.com/openapi/api/v2'
-def chat(content):
+
+async def checkxiaolan(content,index):
+    if content.startswith("来点"):
+        return False
+    if content.startswith("选择"):
+        return False
+    if content.startswith("ddl"):
+        return False
+    if content.startswith("电费"):
+        return False
+    if content.startswith("开启青少年模式"):
+        return False
+    if content.startswith("开启lsp模式"):
+        return False
+    if content.startswith("心灵鸡汤"):
+        return 
+    if ''.join(content.lower().strip().split()).startswith("dailyenglish"):
+        return
+    f=open('mydata.json')
+    data=json.load(f)
+    data.setdefault("started_xiaolan",{})
+    try:
+        if data['started_fanyi'][index] == True:
+            return False
+    except:
+        return False
+    return True
+
+async def chat(content):
     data={
         "reqType":0,
         "perception": {
@@ -13,9 +44,9 @@ def chat(content):
             },
             "selfInfo": {
                 "location": {
-                    "city": "石家庄市",
-                    "province": "河北省",
-                    "street": "慈峪镇"
+                    "city": "上海市",
+                    "province": "上海市",
+                    "street": "曹安公路"
                 }
             }
         },

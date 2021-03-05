@@ -2,9 +2,15 @@ import asyncio
 
 import aiohttp
 
+from fanyi import getFanyi
+
 api_key = "32801024603dc3189af642"
 url = "https://api.lolicon.app/setu/"
-params = {"apikey":api_key,"r18":1,"num":1}
+params = {
+    "apikey":api_key,
+    "r18":1,
+    "num":1
+    }
 
 async def getSetu(r18:int)->str:
     params["r18"]=r18
