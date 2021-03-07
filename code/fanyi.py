@@ -1,16 +1,19 @@
 import asyncio
+import base64
 import hashlib
 import random
 
 import aiohttp
+import requests
+from PIL import Image
 
 url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
 appid='20210304000715313'
 secret_key='yuGzsednir4nSt1BlCmO'
 fromLang='auto'
 toLang='zh'
+cuid='APICUID'
 salt=random.randint(32768,65536)
-
 
 async def getFanyi(content):
     sign=appid+content+str(salt)+secret_key

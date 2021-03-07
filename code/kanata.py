@@ -17,6 +17,7 @@ from graia.application.session import Session
 from graia.broadcast import Broadcast
 from graia.scheduler.timers import crontabify
 
+from captcha import getCaptcha
 from dailyenglish import getDailyenglish
 from electricity import getElectricity
 from fanyi import getFanyi
@@ -183,7 +184,7 @@ async def group_message_fanyi_handler(
         with open('mydata.json','w') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
         await app.sendGroupMessage(group,MessageChain.create([
-            At(member.id),Plain("请开始展示你的无知")
+            At(member.id),Plain("好的")
         ]))
         while True:
             content=await inc.wait(GroupMessageInterrupt(
@@ -198,8 +199,12 @@ async def group_message_fanyi_handler(
             index=str(content.sender.group.id)+str(content.sender.id)
             if data['started_fanyi'][index] == False:
                 continue
-
-            reply = await getFanyi(content.messageChain.asDisplay())
+            try:
+                img_url = content.messageChain[Image][0].url
+                reply = await getFanyi(getCaptcha(img_url))
+            except:
+                reply = await getFanyi(content.messageChain.asDisplay())
+                
             await app.sendGroupMessage(group,MessageChain.create([
                 At(content.sender.id),Plain(reply)
             ]))
