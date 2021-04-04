@@ -2,6 +2,14 @@ import time
 
 import requests
 from bs4 import BeautifulSoup
+from graia.application import GraiaMiraiApplication
+from graia.application.group import Group, Member
+from graia.application.message.chain import MessageChain
+from graia.application.message.elements.internal import At, Image, Plain
+from graia.application.message.parser.kanata import Kanata
+from graia.application.message.parser.signature import (FullMatch,
+                                                        OptionalParam,
+                                                        RequireParam)
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -9,13 +17,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
+from startup import bcc
+
 url='http://202.120.163.129:88/Default.aspx'
 headers={
     'Cookie':'ASP.NET_SessionId=3qqehnbxppz1x3qtjebzobwg',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'
 }
 
-def getElectricity():
+def GetElectricity():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.headless=True
     #这样设置请求头
@@ -50,4 +60,19 @@ def getElectricity():
     # soup=BeautifulSoup(html,'lxml')
     # print(soup)
     remaining_battery=WAIT.until(EC.presence_of_element_located((By.XPATH,'/html/body/form/div[3]/div[2]/div[1]/h6/span[1]')))
-    return remaining_battery.text
+    return remaining_battery.text+'度'
+
+
+@bcc.receiver("GroupMessage")
+async def DianFei(
+    message: MessageChain,
+    app: GraiaMiraiApplication,
+    group: Group, member: Member,
+):  
+    if not group.id==1020661362:
+        return
+    if message.asDisplay().startswith('电费'):
+        elec=GetElectricity()
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain(elec)
+        ]))
