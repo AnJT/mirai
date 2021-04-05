@@ -1,6 +1,5 @@
 import pytesseract
 import requests
-# url='D:\Desktop\img1.jpg'
 from PIL import Image, ImageEnhance
 
 

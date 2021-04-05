@@ -1,6 +1,5 @@
 import asyncio
 import json
-from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY, NULL
 
 import aiohttp
 from graia.application import GraiaMiraiApplication

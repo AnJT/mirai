@@ -1,6 +1,5 @@
 import asyncio
 import json
-from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY, NULL
 
 import aiohttp
 from graia.application import GraiaMiraiApplication
@@ -32,7 +31,7 @@ async def GetDailyEnglish():
             except Exception as e:
                 raise e
 
-@scheduler.schedule(crontabify("39 02 * * *"))
+@scheduler.schedule(crontabify("00 07 * * *"))
 async def DailyEnglishScheduled():
     f=open('mydata.json')
     data=json.load(f)

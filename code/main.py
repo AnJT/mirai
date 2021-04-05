@@ -1,7 +1,6 @@
 import asyncio
 import json
 import random
-from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY, NULL
 
 from graia.application import GraiaMiraiApplication
 from graia.application.event.messages import SourceElementDispatcher
@@ -25,6 +24,7 @@ from fanyi import FanYi
 from jitang import JiTang
 from setu import SeTu, SeTuDB
 from startup import app, bcc, inc, loop, scheduler
+from weather import Weather
 from xiaolan import XiaoLan
 
 app.launch_blocking()
