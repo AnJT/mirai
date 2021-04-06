@@ -57,21 +57,15 @@ async def SeTuDB(
     with open('mydata.json','w') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
-@bcc.receiver("GroupMessage", dispatchers=[
-    # 注意是 dispatcher, 不要和 headless_decorator 混起来
-    Kanata([FullMatch("来点"), RequireParam(name="saying")])
-])
+@bcc.receiver("GroupMessage")
 async def SeTu(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
-    saying: MessageChain
 ):
-    img_path='img\\'
-    content=saying.asDisplay()
-    num_list=[0,1,2]
+    content=message.asDisplay()
     index = str(group.id)+str(member.id)
-    if "美女" in content or "色图" in content or "涩图" in content:
+    if content=="美女" or content=="色图" or content=="涩图" or content=="来点美女" or content=="来点色图" or content=="来点涩图":
         r18=0
         try:
             with open('mydata.json') as f:

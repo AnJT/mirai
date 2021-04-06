@@ -19,6 +19,7 @@ from graia.scheduler.timers import crontabify
 from captcha import getCaptcha
 from choice import Choice
 from dailyenglish import DailyEnglish
+from daxuexi import DaxuexiRemind
 from electricity import DianFei
 from fanyi import FanYi
 from jitang import JiTang

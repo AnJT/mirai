@@ -1,2 +1,0 @@
-# mirai
-qq bot

@@ -31,7 +31,7 @@ async def GetNowWeather()->str:
             data = await resp.json()
             # print(data)
             data = data["lives"][0]
-            result = "天气：{} 温度：{}摄氏度 风向：{} 风力：{}级 湿度：{}% \n数据发布于{}".format(
+            result = "天气：{} 温度：{}°C 风向：{} 风力：{}级 湿度：{}% \n数据发布于{}".format(
                 data["weather"],data["temperature"],data["winddirection"],data["windpower"],data["humidity"],data["reporttime"]
             )
             return (result)
@@ -48,7 +48,7 @@ async def GetForecastWeather()->str:
             print(data)
             for i in range(4):
                 ndata = data[i]
-                result += "{} 白天天气：{} 温度：{}摄氏度 风力：{} 夜晚天气：{} 温度：{}摄氏度 风力：{}级\n".format(
+                result += "{} 白天天气：{} 温度：{}°C 风力：{} 夜晚天气：{} 温度：{}°C 风力：{}级\n".format(
                     ndata["date"],ndata["dayweather"],ndata["daytemp"],ndata["daypower"],ndata["nightweather"],ndata["nighttemp"],ndata["nightpower"]
                 )
             result += date
