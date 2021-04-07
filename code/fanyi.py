@@ -14,8 +14,8 @@ from graia.application.message.parser.kanata import Kanata
 from graia.application.message.parser.signature import (FullMatch,
                                                         OptionalParam,
                                                         RequireParam)
-from PIL import Image
 
+from picturetranslation import GetReply
 from startup import bcc, inc
 
 url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
@@ -71,19 +71,33 @@ async def FanYi(
                 group, member,
                 custom_judgement=lambda x: x.messageChain.asDisplay() is not None
             ))
-            if content.messageChain.asDisplay().startswith("结束"):
-                data['started_fanyi'][index] = False
-                break
-            # print(content)
-            
-            index=str(content.sender.group.id)+str(content.sender.id)
-            if data['started_fanyi'][index] == False:
-                continue
+            try:
+                img_url = content.messageChain.get(Image)[0].url
+                print(img_url)
+                reply = GetReply(img_url)
+                print(reply)
+                await app.sendGroupMessage(group,MessageChain.create([
+                    At(member.id),Plain(reply)
+                ]))
+            except:
+                if content.messageChain.asDisplay().startswith("翻译"):
+                    await app.sendGroupMessage(group,MessageChain.create([
+                        At(content.send.id),Plain("好的")
+                    ]))
+                    return
+                if content.messageChain.asDisplay().startswith("结束"):
+                    data['started_fanyi'][index] = False
+                    break
+                # print(content)
+                
+                index=str(content.sender.group.id)+str(content.sender.id)
+                if data['started_fanyi'][index] == False:
+                    continue
 
-            reply = await GetFanyi(content.messageChain.asDisplay())  
-            await app.sendGroupMessage(group,MessageChain.create([
-                At(content.sender.id),Plain(reply)
-            ]))
+                reply = await GetFanyi(content.messageChain.asDisplay())  
+                await app.sendGroupMessage(group,MessageChain.create([
+                    At(content.sender.id),Plain(reply)
+                ]))
 
         with open('mydata.json','w') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))

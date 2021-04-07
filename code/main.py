@@ -17,6 +17,7 @@ from graia.broadcast import Broadcast
 from graia.scheduler.timers import crontabify
 
 from captcha import getCaptcha
+from chat import XiaoLan
 from choice import Choice
 from dailyenglish import DailyEnglish
 from daxuexi import DaxuexiRemind
@@ -26,7 +27,6 @@ from jitang import JiTang
 from setu import SeTu, SeTuDB
 from startup import app, bcc, inc, loop, scheduler
 from weather import Weather
-from xiaolan import XiaoLan
 
 app.launch_blocking()
 loop.run_forever()
