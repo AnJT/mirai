@@ -59,6 +59,26 @@ def GetReply(content):
     print(resp.json())
     return resp.json()['Response']['Reply']
 
+def Stop(content):
+    if content == '天气':
+        return True
+    if content == '天气预报':
+        return True
+    if content.startswith('选择'):
+        return True
+    if ''.join(content.lower().strip().split()).startswith("dailyenglish"):
+        return True
+    if content == '青年大学习':
+        return True
+    if content == '毒鸡汤':
+        return True
+    if content=="美女" or content=="色图" or content=="涩图" or content=="来点美女" or content=="来点色图" or content=="来点涩图":
+        return True
+    if content == '开启青少年模式' or content =='开启lsp模式':
+        return True
+    return False
+    
+
 
 @bcc.receiver("GroupMessage")
 async def XiaoLan(
@@ -69,9 +89,18 @@ async def XiaoLan(
     content=message.asDisplay()
     index=str(group.id)+str(member.id)
 
+    if Stop(content) == True:
+        return
+
     f=open('mydata.json')
     data=json.load(f)
     data.setdefault("started_xiaolan",{})
+
+    if content.startswith("翻译"):
+        data["started_xiaolan"][index]=False
+        with open('mydata.json','w') as f:
+            json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
+        return
     
     if index in data["started_xiaolan"] and data["started_xiaolan"][index]==True:
         await app.sendGroupMessage(group, MessageChain.create([

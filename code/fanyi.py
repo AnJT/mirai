@@ -45,6 +45,24 @@ async def GetFanyi(content):
             except Exception as e:
                 raise e
 
+def Stop(content):
+    if content == '天气':
+        return True
+    if content == '天气预报':
+        return True
+    if content.startswith('选择'):
+        return True
+    if ''.join(content.lower().strip().split()).startswith("dailyenglish"):
+        return True
+    if content == '青年大学习':
+        return True
+    if content == '毒鸡汤':
+        return True
+    if content=="美女" or content=="色图" or content=="涩图" or content=="来点美女" or content=="来点色图" or content=="来点涩图":
+        return True
+    if content == '开启青少年模式' or content =='开启lsp模式':
+        return True
+    return False
 
 @bcc.receiver("GroupMessage")
 async def FanYi(
@@ -80,12 +98,14 @@ async def FanYi(
                     At(member.id),Plain(reply)
                 ]))
             except:
+                if Stop(content.messageChain.asDisplay()) == True:
+                    continue
                 if content.messageChain.asDisplay().startswith("翻译"):
                     await app.sendGroupMessage(group,MessageChain.create([
                         At(content.send.id),Plain("好的")
                     ]))
                     return
-                if content.messageChain.asDisplay().startswith("结束"):
+                if content.messageChain.asDisplay().startswith("结束") or content.messageChain.asDisplay().startswith("二狗"):
                     data['started_fanyi'][index] = False
                     break
                 # print(content)
