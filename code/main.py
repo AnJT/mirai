@@ -24,6 +24,7 @@ from daxuexi import DaxuexiRemind
 from electricity import DianFei
 from fanyi import FanYi
 from jitang import JiTang
+from lc import GetDailyQuestionJson
 from setu import SeTu, SeTuDB
 from startup import app, bcc, inc, loop, scheduler
 from weather import Weather

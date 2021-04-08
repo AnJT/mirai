@@ -36,7 +36,7 @@ async def DailyEnglishScheduled():
     f=open('mydata.json')
     data=json.load(f)
     await app.sendGroupMessage(data['group']["1020661362"], MessageChain.create([
-        At(342472121),Plain(await GetDailyEnglish())
+        Plain(await GetDailyEnglish())
     ]))
     f.close()
 
