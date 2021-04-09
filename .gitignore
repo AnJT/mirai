@@ -2,9 +2,9 @@
 *mcl
 *mcl.cmd
 *mcl.jar
-/MxLibData
-/bots
-/data
-/libs
-/scripts
+MxLibData
+bots/
+data/
+libs/
+scripts/
 config/Console/AutoLogin.yml

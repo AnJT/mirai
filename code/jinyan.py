@@ -1,13 +1,10 @@
 import json
-import sys
 import time
 
 from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
 from graia.application.message.chain import MessageChain
 from graia.application.message.elements.internal import At, Image, Plain
-
-sys.path.append('..')
 
 from startup import bcc
 
