@@ -33,10 +33,10 @@ async def get_newest_info():
             return (newest_title, newest_url, newest_time)
 
 async def get_reply(data, call=False):
-    reply = ''
+    reply = '狗都不做之青年大学习'
     if not call:
-        reply += '快学，大学习更新了\n'
-    reply = data[0]+'\n'+data[1]+'\n更新于'+data[2]
+        reply += '更新了'
+    reply += '\n'+data[0]+'\n'+data[1]+'\n更新于'+data[2]
     return reply
 
 daxuexi_newest_title = ''

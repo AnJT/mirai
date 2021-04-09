@@ -1,16 +1,16 @@
-[2021-04-10 00:27:14,431][INFO]: initializing app...
-[2021-04-10 00:27:14,474][INFO]: detecting remote's version...
-[2021-04-10 00:27:14,484][INFO]: detected remote's version: 1.9.8
-[2021-04-10 00:27:14,495][INFO]: using pure websocket to receive event
-[2021-04-10 00:27:14,495][INFO]: event receive method checked.
-[2021-04-10 00:27:14,495][INFO]: this application's initialization has been completed.
-[2021-04-10 00:27:14,495][INFO]: --- setting start ---
-[2021-04-10 00:27:14,495][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7feaee583610>
-[2021-04-10 00:27:14,495][INFO]: enable log of chat: yes
-[2021-04-10 00:27:14,495][INFO]: debug: no
-[2021-04-10 00:27:14,495][INFO]: version(remote): 1.9.8
-[2021-04-10 00:27:14,496][INFO]: --- setting end ---
-[2021-04-10 00:27:14,496][INFO]: application has been initialized, used 0.0644s
-[2021-04-10 00:27:14,496][INFO]: websocket daemon: websocket connection starting...
-[2021-04-10 00:27:14,506][INFO]: websocket: connected
-[2021-04-10 00:27:14,506][INFO]: websocket: ping task created
+[2021-04-10 01:15:50,548][INFO]: initializing app...
+[2021-04-10 01:15:50,559][INFO]: detecting remote's version...
+[2021-04-10 01:15:50,565][INFO]: detected remote's version: 1.9.8
+[2021-04-10 01:15:50,569][INFO]: using pure websocket to receive event
+[2021-04-10 01:15:50,571][INFO]: event receive method checked.
+[2021-04-10 01:15:50,572][INFO]: this application's initialization has been completed.
+[2021-04-10 01:15:50,572][INFO]: --- setting start ---
+[2021-04-10 01:15:50,572][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7fd9ace10610>
+[2021-04-10 01:15:50,573][INFO]: enable log of chat: yes
+[2021-04-10 01:15:50,573][INFO]: debug: no
+[2021-04-10 01:15:50,573][INFO]: version(remote): 1.9.8
+[2021-04-10 01:15:50,573][INFO]: --- setting end ---
+[2021-04-10 01:15:50,573][INFO]: application has been initialized, used 0.0252s
+[2021-04-10 01:15:50,574][INFO]: websocket daemon: websocket connection starting...
+[2021-04-10 01:15:50,578][INFO]: websocket: connected
+[2021-04-10 01:15:50,579][INFO]: websocket: ping task created
