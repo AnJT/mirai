@@ -8,6 +8,7 @@ from daxuexi import daxuexi, daxuexi_remind
 from electricity import dianfei
 from fanyi import fanyi
 from guess import guess
+from help import help
 from jinyan import jinyan
 from jitang import jitang
 from lc import daily_lc, daily_lc_scheduled
