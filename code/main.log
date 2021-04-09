@@ -1,0 +1,129 @@
+[2021-04-09 11:24:57,400][INFO]: initializing app...
+[2021-04-09 11:24:57,420][INFO]: detecting remote's version...
+[2021-04-09 11:24:57,426][INFO]: detected remote's version: 1.9.8
+[2021-04-09 11:24:57,434][INFO]: using pure websocket to receive event
+[2021-04-09 11:24:57,437][INFO]: event receive method checked.
+[2021-04-09 11:24:57,439][INFO]: this application's initialization has been completed.
+[2021-04-09 11:24:57,440][INFO]: --- setting start ---
+[2021-04-09 11:24:57,441][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7f6b12693730>
+[2021-04-09 11:24:57,441][INFO]: enable log of chat: yes
+[2021-04-09 11:24:57,441][INFO]: debug: no
+[2021-04-09 11:24:57,441][INFO]: version(remote): 1.9.8
+[2021-04-09 11:24:57,441][INFO]: --- setting end ---
+[2021-04-09 11:24:57,441][INFO]: application has been initialized, used 0.0407s
+[2021-04-09 11:24:57,441][INFO]: websocket daemon: websocket connection starting...
+[2021-04-09 11:24:57,450][INFO]: websocket: connected
+[2021-04-09 11:24:57,453][INFO]: websocket: ping task created
+[2021-04-09 11:25:04,298][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4126,1617938704]接龙 周'
+[2021-04-09 11:25:04,442][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n周穷恤匮\n周游列国\n周急继乏\n周郎顾曲\n周公吐哺\n'
+[2021-04-09 11:26:30,910][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4128,1617938790]lang python; for i in range(10):\n\tprint("أرجوك توقف عن التعلم")'
+[2021-04-09 11:26:32,110][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]output: أرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\nأرجوك توقف عن التعلم\n'
+[2021-04-09 11:26:38,148][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4130,1617938798][mirai:image:{B45FBA4A-6CC5-1599-6D69-F6B5649BFB53}.jpg]'
+[2021-04-09 11:27:47,319][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4131,1617938867][mirai:image:{8EBB1F23-FB74-DFBB-BA65-42A17D0D7743}.png]'
+[2021-04-09 11:27:54,368][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4132,1617938874]好像还能撑住'
+[2021-04-09 11:28:05,037][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4133,1617938884]lang python; print("?¿?"*100)'
+[2021-04-09 11:28:13,289][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]output: ?¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿??¿?\n'
+[2021-04-09 11:28:47,599][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4135,1617938927][mirai:image:{308F3270-4830-B10C-868C-50DA8E2438B6}.jpg]'
+[2021-04-09 11:31:35,396][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4136,1617939095]lang python; import haha'
+[2021-04-09 11:31:36,569][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]output: \nerrors: \nTraceback (most recent call last):\n  File "script.py", line 1, in <module>\n    import haha\nModuleNotFoundError: No module named \'haha\'\n\nExited with error status 1'
+[2021-04-09 11:31:52,879][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4138,1617939112][mirai:image:{B45FBA4A-6CC5-1599-6D69-F6B5649BFB53}.jpg]'
+[2021-04-09 11:32:04,265][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4139,1617939124]lang python; import this'
+[2021-04-09 11:32:05,537][INFO]: [BOT 246987206] Group(1020661362) <- "[mirai:at:1574996073,None]output: The Zen of Python, by Tim Peters\n\nBeautiful is better than ugly.\nExplicit is better than implicit.\nSimple is better than complex.\nComplex is better than complicated.\nFlat is better than nested.\nSparse is better than dense.\nReadability counts.\nSpecial cases aren't special enough to break the rules.\nAlthough practicality beats purity.\nErrors should never pass silently.\nUnless explicitly silenced.\nIn the face of ambiguity, refuse the temptation to guess.\nThere should be one-- and preferably only one --obvious way to do it.\nAlthough that way may not be obvious at first unless you're Dutch.\nNow is better than never.\nAlthough never is often better than *right* now.\nIf the implementation is hard to explain, it's a bad idea.\nIf the implementation is easy to explain, it may be a good idea.\nNamespaces are one honking great idea -- let's do more of those!\n"
+[2021-04-09 11:32:24,161][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4141,1617939144][mirai:image:{79093DDC-42D7-A66F-F9E0-DD12EAAC2284}.jpg]'
+[2021-04-09 11:38:25,121][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4142,1617939505]接龙 笑死'
+[2021-04-09 11:38:25,253][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n死亡枕藉\n死于非命\n死求白赖\n死而无怨\n死无葬身之地\n'
+[2021-04-09 11:43:28,256][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4144,1617939808]我是不是应该写个 help'
+[2021-04-09 11:43:55,328][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4145,1617939835]man bot'
+[2021-04-09 11:44:03,460][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4146,1617939843]woman bot'
+[2021-04-09 11:44:10,286][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4147,1617939850][mirai:image:{C1B324DB-167C-0194-99EE-3597AFC8B4C3}.gif]'
+[2021-04-09 14:01:40,736][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4148,1617948100]lang c;char a[_]="#include <stdio.h>\\n" \n"main(){char*p=a;printf(\\"char a[_]=\\\\\\"\\");while(*p){\\n" \n"switch(*p){case\'\\\\\\"\':printf(\\"\\\\\\\\\\\\\\"\\");break;case\'\\\\\\\\\':\\n" \n"printf(\\"\\\\\\\\\\\\\\\\\\");break;case\'\\\\n\':printf(\\"\\\\\\\\n\\\\\\"\\\\n\\\\\\"\\");\\n" \n"break;default:putchar(*p);}p++;}printf(\\"\\\\\\";\\\\n\\");\\n" \n"fwrite(a,sizeof(a)-1,1,stdout);}\\n" \n""; \n#include <stdio.h> \nmain(){char*p=a;printf("char a[_]=\\"");while(*p){ \nswitch(*p){case\'\\"\':printf("\\\\\\"");break;case\'\\\\\': \nprintf("\\\\\\\\");break;case\'\\n\':printf("\\\\n\\"\\n\\""); \nbreak;default:putchar(*p);}p++;}printf("\\";\\n"); \nfwrite(a,sizeof(a)-1,1,stdout);}'
+[2021-04-09 14:01:42,028][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1337795211,None]output: char a[_]="#include <stdio.h>\\n"\n"main(){char*p=a;printf(\\"char a[_]=\\\\\\"\\");while(*p){\\n"\n"switch(*p){case\'\\\\\\"\':printf(\\"\\\\\\\\\\\\\\"\\");break;case\'\\\\\\\\\':\\n"\n"printf(\\"\\\\\\\\\\\\\\\\\\");break;case\'\\\\n\':printf(\\"\\\\\\\\n\\\\\\"\\\\n\\\\\\"\\");\\n"\n"break;default:putchar(*p);}p++;}printf(\\"\\\\\\";\\\\n\\");\\n"\n"fwrite(a,sizeof(a)-1,1,stdout);}\\n"\n"";\n#include <stdio.h>\nmain(){char*p=a;printf("char a[_]=\\"");while(*p){\nswitch(*p){case\'\\"\':printf("\\\\\\"");break;case\'\\\\\':\nprintf("\\\\\\\\");break;case\'\\n\':printf("\\\\n\\"\\n\\"");\nbreak;default:putchar(*p);}p++;}printf("\\";\\n");\nfwrite(a,sizeof(a)-1,1,stdout);}\n\nerrors: main.c:9:1: warning: return type defaults to ‘int’ [_-Wimplicit-int]\n    9 | main(){char*p=a;printf("char a[_]=\\"");while(*p){\n      | ^~~~\n\n\n'
+[2021-04-09 14:02:13,393][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4150,1617948133]gg'
+[2021-04-09 15:38:44,771][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4151,1617953924]翻译'
+[2021-04-09 15:38:44,920][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]好的'
+[2021-04-09 15:38:53,191][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4153,1617953932][mirai:image:{D1D167A7-6482-704B-D8BC-A157DF6129D1}.png]'
+[2021-04-09 15:38:53,301][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]mandatory\n强制性'
+[2021-04-09 15:40:19,849][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4155,1617954019][mirai:image:{8A60E1A8-B3B7-A7BA-418E-C9328EEE693E}.png]'
+[2021-04-09 15:40:19,992][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Use Case Generalization\n用例泛化'
+[2021-04-09 15:51:10,700][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4157,1617954669][mirai:image:{DDBD4482-FD30-12F2-3F42-FAE66F204A5F}.png]'
+[2021-04-09 15:51:10,846][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Agile Analysis\n敏捷分析'
+[2021-04-09 15:54:24,283][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4159,1617954863][mirai:image:{46C745F7-A7D2-F071-5CE8-46D6EA1040F6}.png]'
+[2021-04-09 15:54:24,422][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Agile fixes the date and resources and varies the scope\n敏捷修正日期和资源，并改变范围。'
+[2021-04-09 15:56:24,960][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4161,1617954983][mirai:image:{0A47DD82-2905-83E0-8FE8-DED21F024262}.png]'
+[2021-04-09 15:56:25,122][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Scaled Agile Framework (SAFe)\n规模敏捷框架(安全)'
+[2021-04-09 16:15:30,138][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4163,1617956129][mirai:image:{D9DD24AD-D2A4-C86A-20DA-F1B41CB36563}.png]'
+[2021-04-09 16:15:30,273][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Agile teams are cross-functional\n敏捷团队是跨功能的。'
+[2021-04-09 16:26:18,963][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4165,1617956778][mirai:image:{140B61B3-A108-1325-CD0C-E5ACB779A5ED}.png]'
+[2021-04-09 16:26:19,108][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Agile Release Trains\n敏捷发布培训'
+[2021-04-09 16:30:26,003][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4167,1617957025][mirai:image:{650D843D-6FC2-E478-98DE-ABB871487A67}.png]'
+[2021-04-09 16:30:26,165][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Product Owner, Scrum Master.\n产品负责人，Scrum大师。'
+[2021-04-09 16:30:47,128][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4169,1617957045][mirai:image:{A35CCB2D-7A77-71EA-95FE-4A53C792DF9D}.png]'
+[2021-04-09 16:30:47,277][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Agile Prodcut Delivery\n敏捷截割交付'
+[2021-04-09 16:32:13,723][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4171,1617957133][mirai:image:{CBEE7B61-F666-0412-2B26-D7CB66556FA2}.png]'
+[2021-04-09 16:32:13,846][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Customer Centricity\n客户中心'
+[2021-04-09 16:32:37,862][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4173,1617957156][mirai:image:{CA791C02-BC89-D35B-5FF8-4C2CB2C2F862}.png]'
+[2021-04-09 16:32:37,992][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Build whole-product solutions.\n'
+[2021-04-09 16:32:46,553][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4175,1617957166][mirai:image:{CA791C02-BC89-D35B-5FF8-4C2CB2C2F862}.png]'
+[2021-04-09 16:32:46,810][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Build whole-product solutions.\n建立完整的产品解决方案。'
+[2021-04-09 16:32:54,745][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4177,1617957174][mirai:image:{7D4D4B85-65EE-A64A-A13D-696B46F628D3}.png]'
+[2021-04-09 16:32:54,876][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Create customer lifetime value.\n创造客户终身价值。'
+[2021-04-09 16:36:48,385][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4179,1617957407][mirai:image:{FE4D3644-D1EA-8F34-4FFB-28A5DE79C4F9}.png]'
+[2021-04-09 16:36:48,536][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]Refine personas\n提炼人物角色'
+[2021-04-09 16:37:04,505][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4181,1617957424]翻译'
+[2021-04-09 16:37:04,653][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]好的'
+[2021-04-09 16:37:07,278][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4183,1617957427]persona 5'
+[2021-04-09 16:37:07,882][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]persona 5:人物角色5'
+[2021-04-09 16:49:49,172][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4185,1617958188][mirai:image:{CF86D183-66CF-8363-E385-4BF5F67D2168}.png]'
+[2021-04-09 16:49:49,311][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]SWOT analysis and TOWS strategic matrix\nSWOT分析与TOSS战略矩阵'
+[2021-04-09 16:56:28,167][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4187,1617958588]翻译'
+[2021-04-09 16:56:28,360][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1337795211,None]好的'
+[2021-04-09 16:56:36,060][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4189,1617958595][mirai:image:{5BEB9469-9E1B-8F16-E5BC-8BDE566D8935}.png]'
+[2021-04-09 16:56:36,221][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1337795211,None]Pivotal\n枢轴'
+[2021-04-09 16:56:38,759][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4191,1617958598]？'
+[2021-04-09 16:56:39,359][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1337795211,None]？:？'
+[2021-04-09 16:56:42,018][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4193,1617958601]结束'
+[2021-04-09 17:03:08,072][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4194,1617958988]翻译'
+[2021-04-09 17:03:08,208][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1337795211,None]好的'
+[2021-04-09 17:03:16,894][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4196,1617958996][mirai:image:{C9028B40-CFC1-976C-AFAA-9F2482F47686}.png]'
+[2021-04-09 17:03:17,022][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1337795211,None]metaphor\n隐喻'
+Traceback (most recent call last):
+  File "/root/mirai/code/fanyi.py", line 93, in FanYi
+    img_url = content.messageChain.get(Image)[0].url
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/graia/broadcast/__init__.py", line 204, in Executor
+    result = await run_always_await_safely(
+  File "/usr/local/lib/python3.8/dist-packages/graia/broadcast/utilles.py", line 30, in run_always_await_safely
+    return await callable(*args, **kwargs)
+  File "/root/mirai/code/fanyi.py", line 105, in FanYi
+    At(content.send.id),Plain("好的")
+AttributeError: 'GroupMessage' object has no attribute 'send'
+[2021-04-09 17:04:07,608][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4198,1617959047]翻译'
+[2021-04-09 17:04:07,826][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]好的'
+[2021-04-09 17:04:24,542][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4200,1617959064]artefact'
+[2021-04-09 17:04:25,340][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]artefact:人工制品'
+[2021-04-09 17:04:43,202][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4202,1617959083]artifact'
+[2021-04-09 17:04:43,884][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]artifact:人工制品'
+[2021-04-09 17:04:53,143][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4204,1617959093]guess SRS'
+[2021-04-09 17:04:54,898][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]srs maybe:\n性别重置手术'
+[2021-04-09 17:04:55,671][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]guess SRS:猜猜SRS'
+[2021-04-09 17:05:08,671][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4207,1617959106]guess guess guess'
+[2021-04-09 17:05:08,812][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]guessguess maybe:\n啥也不是'
+[2021-04-09 17:05:09,300][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]guess guess guess:猜猜猜猜'
+[2021-04-09 17:05:09,730][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4210,1617959109]结束'
+[2021-04-09 17:05:13,434][INFO]: 246987206: [bot(1020661362] 不学啦!(695290109) -> '[mirai:source:4211,1617959113]guess ajtgod'
+[2021-04-09 17:05:15,209][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:695290109,None]ajtgod maybe:\nA集团God'
+[2021-04-09 17:05:21,793][INFO]: 246987206: [bot(1020661362] 不学啦!(695290109) -> '[mirai:source:4213,1617959121]瓦'
+[2021-04-09 17:05:24,935][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4214,1617959124]guess ky'
+[2021-04-09 17:05:25,067][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]ky maybe:\n空気読めない\n不识氛围\n可以\n凯源\n坤音\n润滑剂\n磕药\n扩列愉快'
+[2021-04-09 17:05:29,464][INFO]: 246987206: [bot(1020661362] 不学啦!(695290109) -> '[mirai:source:4216,1617959129]涛涛年纪不大就有集团了'
+[2021-04-09 17:05:43,438][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4217,1617959141]guess xnygod'
+[2021-04-09 17:05:43,587][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]xnygod maybe:\n小年夜God'
+[2021-04-09 17:05:50,071][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4219,1617959149][mirai:image:{B45FBA4A-6CC5-1599-6D69-F6B5649BFB53}.jpg]'
+[2021-04-09 17:06:21,495][INFO]: 246987206: [bot(1020661362] 不学啦!(695290109) -> '[mirai:source:4220,1617959181]小年夜确实god'
+[2021-04-09 17:06:23,370][INFO]: 246987206: [bot(1020661362] 不学啦!(695290109) -> '[mirai:source:4221,1617959183]又假期'
+[2021-04-09 17:06:25,593][INFO]: 246987206: [bot(1020661362] 不学啦!(695290109) -> '[mirai:source:4222,1617959185]有假期的'
+[2021-04-09 17:07:03,043][INFO]: 246987206: [bot(1020661362] 矛盾体🙃(1337795211) -> '[mirai:source:4223,1617959222]结束'
