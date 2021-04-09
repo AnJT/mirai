@@ -1,33 +1,25 @@
 #coding=utf-8
 
-import asyncio
 import json
 import random
-import sqlite3
-import uuid
-from datetime import datetime
+import sys
 
-import aiohttp
 import requests
 from bs4 import BeautifulSoup
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.friend import Friend
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
+from graia.application.message.elements.internal import At, Plain
 from graia.application.message.parser.kanata import Kanata
 from graia.application.message.parser.signature import (FullMatch,
                                                         OptionalParam,
                                                         RequireParam)
-from graia.scheduler.timers import (crontabify, every_custom_hours,
-                                    every_custom_minutes, every_custom_seconds)
 
-from startup import app, bcc, scheduler
+from startup import bcc
 
 
-def GetChengyuFromUrl():
+def get_chengyu_from_url():
     all_url = 'http://chengyu.t086.com/'
 
     #http请求头
@@ -60,7 +52,7 @@ def GetChengyuFromUrl():
     with open('chengyu.json', 'w+', encoding='utf-8') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
-def GetChengyuFromJson(cy):
+def get_chengyu_from_json(cy):
     f=open('chengyu.json',encoding='utf-8')
     data=json.load(f)
     f.close()
@@ -79,7 +71,7 @@ def is_all_chinese(strs):
 @bcc.receiver("GroupMessage", dispatchers=[
     Kanata([FullMatch("接龙"), RequireParam(name="saying")])
 ])
-async def Chengyu(
+async def chengyu(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -88,7 +80,7 @@ async def Chengyu(
     word = saying.asDisplay()[-1]
     if not is_all_chinese(word):
         return 
-    result = GetChengyuFromJson(word)
+    result = get_chengyu_from_json(word)
     if len(result) == 0:
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Plain("xs，根本找不到")
@@ -106,14 +98,14 @@ async def Chengyu(
 @bcc.receiver("FriendMessage", dispatchers=[
     Kanata([FullMatch("接龙"), RequireParam(name="saying")])
 ])
-async def Chengyu_friend(
+async def chengyu_friend(
     app: GraiaMiraiApplication, friend: Friend,
     saying: MessageChain
 ):
     word = saying.asDisplay()[-1]
     if not is_all_chinese(word):
         return 
-    result = GetChengyuFromJson(word)
+    result = get_chengyu_from_json(word)
     if len(result) == 0:
         await app.sendFriendMessage(friend, MessageChain.create([
             Plain("xs，根本找不到")

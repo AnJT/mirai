@@ -1,16 +1,18 @@
-[2021-04-09 22:47:34,918][INFO]: initializing app...
-[2021-04-09 22:47:34,966][INFO]: detecting remote's version...
-[2021-04-09 22:47:34,974][INFO]: detected remote's version: 1.9.8
-[2021-04-09 22:47:34,990][INFO]: using pure websocket to receive event
-[2021-04-09 22:47:34,993][INFO]: event receive method checked.
-[2021-04-09 22:47:34,994][INFO]: this application's initialization has been completed.
-[2021-04-09 22:47:34,994][INFO]: --- setting start ---
-[2021-04-09 22:47:34,994][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7fc0eec09e20>
-[2021-04-09 22:47:34,994][INFO]: enable log of chat: yes
-[2021-04-09 22:47:34,994][INFO]: debug: no
-[2021-04-09 22:47:34,994][INFO]: version(remote): 1.9.8
-[2021-04-09 22:47:34,994][INFO]: --- setting end ---
-[2021-04-09 22:47:34,994][INFO]: application has been initialized, used 0.076s
-[2021-04-09 22:47:34,994][INFO]: websocket daemon: websocket connection starting...
-[2021-04-09 22:47:35,003][INFO]: websocket: connected
-[2021-04-09 22:47:35,007][INFO]: websocket: ping task created
+[2021-04-09 23:30:59,855][INFO]: initializing app...
+[2021-04-09 23:30:59,880][INFO]: detecting remote's version...
+[2021-04-09 23:30:59,891][INFO]: detected remote's version: 1.9.8
+[2021-04-09 23:30:59,903][INFO]: using pure websocket to receive event
+[2021-04-09 23:30:59,903][INFO]: event receive method checked.
+[2021-04-09 23:30:59,903][INFO]: this application's initialization has been completed.
+[2021-04-09 23:30:59,904][INFO]: --- setting start ---
+[2021-04-09 23:30:59,904][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7f9f106205b0>
+[2021-04-09 23:30:59,904][INFO]: enable log of chat: yes
+[2021-04-09 23:30:59,904][INFO]: debug: no
+[2021-04-09 23:30:59,904][INFO]: version(remote): 1.9.8
+[2021-04-09 23:30:59,904][INFO]: --- setting end ---
+[2021-04-09 23:30:59,904][INFO]: application has been initialized, used 0.0487s
+[2021-04-09 23:30:59,904][INFO]: websocket daemon: websocket connection starting...
+[2021-04-09 23:30:59,914][INFO]: websocket: connected
+[2021-04-09 23:30:59,914][INFO]: websocket: ping task created
+[2021-04-09 23:31:05,300][INFO]: 246987206: [bbb(537077670] ajt（｀Δ´）！(342472121) -> '[mirai:source:2237,1617982265]涩图'
+[2021-04-09 23:31:11,064][INFO]: [BOT 246987206] Group(537077670) <- '[mirai:at:342472121,None][mirai:image:{5757942D-FFF2-810F-868D-5F49D2593478}.jpg]'

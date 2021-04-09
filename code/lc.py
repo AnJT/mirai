@@ -22,7 +22,7 @@ from graia.scheduler.timers import (crontabify, every_custom_hours,
 from startup import app, bcc, scheduler
 
 
-def GetDailyQuestion(lc='leetcode'):
+def get_daily_question(lc='leetcode'):
     base_url = 'https://leetcode-cn.com'
 
     response = requests.post(base_url + "/graphql", json={
@@ -52,27 +52,25 @@ def GetDailyQuestion(lc='leetcode'):
     return result
 
 @scheduler.schedule(crontabify("00 00 * * *"))
-async def DailyLcScheduled():
+async def daily_lc_scheduled():
     f=open('mydata.json')
     data=json.load(f)
     await app.sendGroupMessage(data['group']["1020661362"], MessageChain.create([
-        Plain(GetDailyQuestion())
+        Plain(get_daily_question())
     ]))
     f.close()
 
 @bcc.receiver("GroupMessage")
-async def DailyLc(
+async def daily_lc(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
-    if not group.id==1020661362:
-        return
     if ''.join(message.asDisplay().lower().strip().split()) == "lc":
         await app.sendGroupMessage(group, MessageChain.create([
-            At(member.id),Plain(GetDailyQuestion('lc'))
+            At(member.id),Plain(get_daily_question('lc'))
         ]))
     elif ''.join(message.asDisplay().lower().strip().split()) == "leetcode":
         await app.sendGroupMessage(group, MessageChain.create([
-            At(member.id),Plain(GetDailyQuestion())
+            At(member.id),Plain(get_daily_question())
         ]))

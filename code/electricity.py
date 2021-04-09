@@ -1,18 +1,8 @@
-import time
-
-import requests
-from bs4 import BeautifulSoup
 from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import (FullMatch,
-                                                        OptionalParam,
-                                                        RequireParam)
+from graia.application.message.elements.internal import At, Plain
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -25,7 +15,7 @@ headers={
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'
 }
 
-def GetElectricity():
+def get_electricity():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.headless=True
     #这样设置请求头
@@ -64,7 +54,7 @@ def GetElectricity():
 
 
 @bcc.receiver("GroupMessage")
-async def DianFei(
+async def dianfei(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -72,7 +62,7 @@ async def DianFei(
     if not group.id==1020661362:
         return
     if message.asDisplay().startswith('电费'):
-        elec=GetElectricity()
+        elec=get_electricity()
         await app.sendGroupMessage(group,MessageChain.create([
             At(member.id),Plain(elec)
         ]))

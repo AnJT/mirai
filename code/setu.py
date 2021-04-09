@@ -1,17 +1,10 @@
-import asyncio
 import json
 
 import aiohttp
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
 from graia.application.message.elements.internal import At, Image, Plain
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import (FullMatch,
-                                                        OptionalParam,
-                                                        RequireParam)
 
 from startup import bcc
 
@@ -23,16 +16,15 @@ params = {
     "num":1
     }
 
-async def GetSeTu(r18:int)->str:
+async def get_setu(r18:int)->str:
     params["r18"]=r18
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url,params=params) as resp:
             data = await resp.json()
-            # print(data["data"])
             return data["data"][0]["url"]
 
 @bcc.receiver("GroupMessage")
-async def SeTuDB(
+async def setu_db(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -58,7 +50,7 @@ async def SeTuDB(
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
 @bcc.receiver("GroupMessage")
-async def SeTu(
+async def setu(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -81,7 +73,7 @@ async def SeTu(
             with open('mydata.json','w+') as f:
                 json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
-        img_url = await GetSeTu(r18)
+        img_url = await get_setu(r18)
 
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Image.fromNetworkAddress(url=img_url)

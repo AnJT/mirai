@@ -1,5 +1,4 @@
 # -*- coding: utf8 -*-
-import asyncio
 import base64
 import hashlib
 import hmac
@@ -8,18 +7,11 @@ import random
 import sys
 import time
 
-import aiohttp
 import requests
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import (FullMatch,
-                                                        OptionalParam,
-                                                        RequireParam)
+from graia.application.message.elements.internal import At, Plain
 
 from startup import bcc
 
@@ -35,7 +27,7 @@ def sign_str(key, s, method):
     hmac_str = hmac.new(key.encode("utf8"), s.encode("utf8"), method).digest()
     return base64.b64encode(hmac_str)
 
-def GetReply(content):
+def get_reply(content):
     endpoint = "nlp.tencentcloudapi.com"
     data = {
         'Action' : 'ChatBot',
@@ -53,13 +45,10 @@ def GetReply(content):
     data['Timestamp'] = int(time.time())
     s = get_string_to_sign("GET", endpoint, data)
     data["Signature"] = sign_str(secret_key, s, hashlib.sha1)
-    print(data['Signature'])
     resp = requests.get("https://" + endpoint, params=data)
-    # print(resp.json()['Response']['Reply'])
-    print(resp.json())
     return resp.json()['Response']['Reply']
 
-def Stop(content):
+def stop(content):
     if content == '天气':
         return True
     if content == '天气预报':
@@ -82,7 +71,7 @@ def Stop(content):
 
 
 @bcc.receiver("GroupMessage")
-async def XiaoLan(
+async def xiaolan(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -90,7 +79,7 @@ async def XiaoLan(
     content=message.asDisplay()
     index=str(group.id)+str(member.id)
 
-    if Stop(content) == True:
+    if stop(content) == True:
         return
 
     f=open('mydata.json')
@@ -105,7 +94,7 @@ async def XiaoLan(
     
     if index in data["started_xiaolan"] and data["started_xiaolan"][index]==True:
         await app.sendGroupMessage(group, MessageChain.create([
-        At(member.id),Plain(GetReply(content))
+        At(member.id),Plain(get_reply(content))
     ]))
     else:
         if message.asDisplay().startswith("二狗"):

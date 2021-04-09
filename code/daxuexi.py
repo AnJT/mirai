@@ -4,15 +4,9 @@ import json
 import aiohttp
 from bs4 import BeautifulSoup
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import (FullMatch,
-                                                        OptionalParam,
-                                                        RequireParam)
+from graia.application.message.elements.internal import At, Plain
 from graia.scheduler.timers import (every_custom_hours, every_custom_minutes,
                                     every_custom_seconds)
 
@@ -23,7 +17,7 @@ headers={
     'user-agend':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36'
 }
 
-async def GetNewestInfo():
+async def get_newest_info():
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, headers=headers) as resp:
             soup = BeautifulSoup(await resp.text(), 'lxml')
@@ -38,7 +32,7 @@ async def GetNewestInfo():
             )[0].text[1:]
             return (newest_title, newest_url, newest_time)
 
-async def GetReply(data, call=False):
+async def get_reply(data, call=False):
     reply = ''
     if not call:
         reply += '快学，大学习更新了\n'
@@ -48,15 +42,15 @@ async def GetReply(data, call=False):
 daxuexi_newest_title = ''
 
 @scheduler.schedule(every_custom_minutes(10))
-async def DaxuexiRemind():
+async def daxuexi_remind():
     global daxuexi_newest_title
-    newest_data = await GetNewestInfo()
+    newest_data = await get_newest_info()
     if newest_data[0] == daxuexi_newest_title:
         return
     if daxuexi_newest_title == '':
         daxuexi_newest_title = newest_data[0]
         return
-    replay = await GetReply(newest_data)
+    replay = await get_reply(newest_data)
     f=open('mydata.json')
     data=json.load(f)
     await app.sendGroupMessage(data['group']["1020661362"], MessageChain.create([
@@ -65,15 +59,15 @@ async def DaxuexiRemind():
     f.close()
 
 @bcc.receiver("GroupMessage")
-async def Weather(
+async def daxuexi(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
     if not message.asDisplay().startswith("青年大学习"):
         return
-    newest_data = await GetNewestInfo()
-    reply = await GetReply(newest_data, True)
+    newest_data = await get_newest_info()
+    reply = await get_reply(newest_data, True)
     await app.sendGroupMessage(group,MessageChain.create([
         At(member.id),Plain(reply)
     ]))

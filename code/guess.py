@@ -1,27 +1,19 @@
-import asyncio
 import json
-from datetime import datetime
 
-import aiohttp
 import requests
-from bs4 import BeautifulSoup
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
+from graia.application.message.elements.internal import At, Plain
 from graia.application.message.parser.kanata import Kanata
 from graia.application.message.parser.signature import (FullMatch,
                                                         OptionalParam,
                                                         RequireParam)
-from graia.scheduler.timers import (crontabify, every_custom_hours,
-                                    every_custom_minutes, every_custom_seconds)
 
-from startup import app, bcc, scheduler
+from startup import bcc
 
 
-def Guess(text):
+def get_guess(text):
     url = "https://lab.magiconch.com/api/nbnhhsh/guess"
     data = {
         'text' : text
@@ -44,7 +36,7 @@ def Guess(text):
 @bcc.receiver("GroupMessage", dispatchers=[
     Kanata([FullMatch("guess"), RequireParam(name="saying")])
 ])
-async def group_message_handler(
+async def guess(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -52,5 +44,5 @@ async def group_message_handler(
 ):
     words = ''.join(saying.asDisplay().lower().strip().split())
     await app.sendGroupMessage(group, MessageChain.create([
-        At(member.id),Plain(Guess(words))
+        At(member.id),Plain(get_guess(words))
     ]))

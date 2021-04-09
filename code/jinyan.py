@@ -10,7 +10,7 @@ from startup import bcc
 
 
 @bcc.receiver("GroupMessage")
-async def Jinyan(
+async def jinyan(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,

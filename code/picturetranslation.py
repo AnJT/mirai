@@ -14,7 +14,7 @@ def get_as_base64(url):
     res =  base64.b64encode(requests.get(url).content)
     return str(res, 'utf8')
 
-def GetReply(url):
+def get_reply(url):
     try: 
         cred = credential.Credential("AKIDTigOt70mD0NUKvEOmqa5LK3B3f192H8P", "C8NLmwqUryeKjvEH5cs0h8J5JWpIVaQz") 
         httpProfile = HttpProfile()

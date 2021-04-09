@@ -1,28 +1,18 @@
 #coding=utf-8
 
-import asyncio
 import json
-import random
-import sqlite3
-import uuid
-from datetime import datetime
 
 import aiohttp
-from bs4 import BeautifulSoup
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
+from graia.application.message.elements.internal import At, Plain
 from graia.application.message.parser.kanata import Kanata
 from graia.application.message.parser.signature import (FullMatch,
                                                         OptionalParam,
                                                         RequireParam)
-from graia.scheduler.timers import (crontabify, every_custom_hours,
-                                    every_custom_minutes, every_custom_seconds)
 
-from startup import app, bcc
+from startup import bcc
 
 url = 'https://tool.runoob.com/compile2.php'
 headers = {
@@ -35,7 +25,7 @@ data = {
     'token':'4381fe197827ec87cbac9552f14ec62a',
     'fileext':'rs'
 }
-async def GetOutput(lang, code):
+async def get_output(lang, code):
     f=open('compile.json',encoding='utf-8')
     js=json.load(f)
     if lang not in js:
@@ -57,7 +47,7 @@ async def GetOutput(lang, code):
 @bcc.receiver("GroupMessage", dispatchers=[
     Kanata([FullMatch("lang"), RequireParam(name="saying")])
 ])
-async def Compile(
+async def compile(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -70,7 +60,7 @@ async def Compile(
         lang = ''.join(lang.lower().strip().split())
         code = saying[idx+1:]
         await app.sendGroupMessage(group, MessageChain.create([
-            At(member.id),Plain(await GetOutput(lang, code))
+            At(member.id),Plain(await get_output(lang, code))
         ]))
     except Exception as e:
         print(e)

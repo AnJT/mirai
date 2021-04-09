@@ -3,7 +3,7 @@ import random
 from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
+from graia.application.message.elements.internal import At, Plain
 from graia.application.message.parser.kanata import Kanata
 from graia.application.message.parser.signature import (FullMatch,
                                                         OptionalParam,
@@ -16,7 +16,7 @@ from startup import bcc
     # 注意是 dispatcher, 不要和 headless_decorator 混起来
     Kanata([FullMatch("选择"), RequireParam(name="saying")])
 ])
-async def Choice(
+async def choice(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,

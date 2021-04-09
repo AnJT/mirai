@@ -1,5 +1,3 @@
-import asyncio
-import base64
 import hashlib
 import json
 import random
@@ -10,12 +8,8 @@ from graia.application.group import Group, Member
 from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
 from graia.application.message.elements.internal import At, Image, Plain
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import (FullMatch,
-                                                        OptionalParam,
-                                                        RequireParam)
 
-from picturetranslation import GetReply
+from picturetranslation import get_reply
 from startup import bcc, inc
 
 url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
@@ -26,7 +20,7 @@ toLang='zh'
 cuid='APICUID'
 salt=random.randint(32768,65536)
 
-async def GetFanyi(content):
+async def get_fanyi(content):
     sign=appid+content+str(salt)+secret_key
     sign=hashlib.md5(sign.encode()).hexdigest()
     params = {
@@ -45,7 +39,7 @@ async def GetFanyi(content):
             except Exception as e:
                 raise e
 
-def Stop(content):
+def stop(content):
     if content == '天气':
         return True
     if content == '天气预报':
@@ -65,7 +59,7 @@ def Stop(content):
     return False
 
 @bcc.receiver("GroupMessage")
-async def FanYi(
+async def fanyi(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -92,13 +86,13 @@ async def FanYi(
             try:
                 img_url = content.messageChain.get(Image)[0].url
                 print(img_url)
-                reply = GetReply(img_url)
+                reply = get_reply(img_url)
                 print(reply)
                 await app.sendGroupMessage(group,MessageChain.create([
                     At(member.id),Plain(reply)
                 ]))
             except:
-                if Stop(content.messageChain.asDisplay()) == True:
+                if stop(content.messageChain.asDisplay()) == True:
                     continue
                 if content.messageChain.asDisplay().startswith("翻译"):
                     await app.sendGroupMessage(group,MessageChain.create([
@@ -114,7 +108,7 @@ async def FanYi(
                 if data['started_fanyi'][index] == False:
                     continue
 
-                reply = await GetFanyi(content.messageChain.asDisplay())  
+                reply = await get_fanyi(content.messageChain.asDisplay())  
                 await app.sendGroupMessage(group,MessageChain.create([
                     At(content.sender.id),Plain(reply)
                 ]))

@@ -1,17 +1,8 @@
-import asyncio
-import json
-
 import aiohttp
 from graia.application import GraiaMiraiApplication
-from graia.application.event.messages import SourceElementDispatcher
 from graia.application.group import Group, Member
-from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
-from graia.application.message.elements.internal import At, Image, Plain
-from graia.application.message.parser.kanata import Kanata
-from graia.application.message.parser.signature import (FullMatch,
-                                                        OptionalParam,
-                                                        RequireParam)
+from graia.application.message.elements.internal import At, Plain
 
 from startup import bcc
 
@@ -24,7 +15,7 @@ params = {
     "output": "JSON"
     }
 
-async def GetNowWeather()->str:
+async def get_now_weather()->str:
     params["extensions"] = "base"
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, params=params) as resp:
@@ -36,7 +27,7 @@ async def GetNowWeather()->str:
             )
             return (result)
 
-async def GetForecastWeather()->str:
+async def get_forecast_weather()->str:
     params["extensions"] = "all"
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, params=params) as resp:
@@ -57,7 +48,7 @@ async def GetForecastWeather()->str:
 
 
 @bcc.receiver("GroupMessage")
-async def Weather(
+async def weather(
     message: MessageChain,
     app: GraiaMiraiApplication,
     group: Group, member: Member,
@@ -65,9 +56,9 @@ async def Weather(
     if not message.asDisplay().startswith("天气"):
         return
     if message.asDisplay().count("预报") or message.asDisplay().count("预测"):
-        reply = await GetForecastWeather()
+        reply = await get_forecast_weather()
     else:
-        reply = await GetNowWeather()
+        reply = await get_now_weather()
     await app.sendGroupMessage(group,MessageChain.create([
         At(member.id),Plain(reply)
     ]))
