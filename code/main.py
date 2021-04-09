@@ -18,13 +18,17 @@ from graia.scheduler.timers import crontabify
 
 from captcha import getCaptcha
 from chat import XiaoLan
+from chengyu import Chengyu
 from choice import Choice
+from compile import Compile
 from dailyenglish import DailyEnglish
 from daxuexi import DaxuexiRemind
 from electricity import DianFei
 from fanyi import FanYi
+from guess import Guess
+from jinyan import Jinyan
 from jitang import JiTang
-from lc import GetDailyQuestionJson
+from lc import GetDailyQuestion
 from setu import SeTu, SeTuDB
 from startup import app, bcc, inc, loop, scheduler
 from weather import Weather

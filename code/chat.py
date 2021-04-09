@@ -76,6 +76,7 @@ def Stop(content):
         return True
     if content == '开启青少年模式' or content =='开启lsp模式':
         return True
+    
     return False
     
 
@@ -98,7 +99,7 @@ async def XiaoLan(
 
     if content.startswith("翻译"):
         data["started_xiaolan"][index]=False
-        with open('mydata.json','w') as f:
+        with open('mydata.json','w+') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
         return
     
@@ -116,6 +117,6 @@ async def XiaoLan(
     if content.startswith("再见") or content.startswith("拜拜"):
         data["started_xiaolan"][index]=False
 
-    with open('mydata.json','w') as f:
+    with open('mydata.json','w+') as f:
         json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 

@@ -79,7 +79,7 @@ async def FanYi(
         index=str(group.id)+str(member.id)
         data['started_fanyi'][index] = True
 
-        with open('mydata.json','w') as f:
+        with open('mydata.json','w+') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
         await app.sendGroupMessage(group,MessageChain.create([
             At(member.id),Plain("好的")
@@ -119,5 +119,5 @@ async def FanYi(
                     At(content.sender.id),Plain(reply)
                 ]))
 
-        with open('mydata.json','w') as f:
+        with open('mydata.json','w+') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))

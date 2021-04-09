@@ -22,7 +22,7 @@ from graia.scheduler.timers import (crontabify, every_custom_hours,
 from startup import app, bcc, scheduler
 
 
-def GetDailyQuestion():
+def GetDailyQuestion(lc='leetcode'):
     base_url = 'https://leetcode-cn.com'
 
     response = requests.post(base_url + "/graphql", json={
@@ -43,6 +43,10 @@ def GetDailyQuestion():
     level = jsonText.get('difficulty')
     context = jsonText.get('translatedContent')
     context = BeautifulSoup(context,'html.parser').get_text()
+    if lc == 'lc':
+        result = '狗都不做之lc每日一题:\n'+no+"."+leetcodeTitle+'.'+level+'\n'+\
+        '本题链接:'+url
+        return result
     result = '狗都不做之lc每日一题:\n'+no+"."+leetcodeTitle+'.'+level+'\n'+context+\
         '本题链接:'+url
     return result
@@ -64,7 +68,11 @@ async def DailyLc(
 ):  
     if not group.id==1020661362:
         return
-    if ''.join(message.asDisplay().lower().strip().split()) == "lc" or ''.join(message.asDisplay().lower().strip().split()) == "leetcode":
+    if ''.join(message.asDisplay().lower().strip().split()) == "lc":
+        await app.sendGroupMessage(group, MessageChain.create([
+            At(member.id),Plain(GetDailyQuestion('lc'))
+        ]))
+    elif ''.join(message.asDisplay().lower().strip().split()) == "leetcode":
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Plain(GetDailyQuestion())
-    ]))
+        ]))
