@@ -31,7 +31,7 @@ async def jitang(
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
-    if message.asDisplay().startswith('毒鸡汤'):
+    if message.asDisplay() == '毒鸡汤':
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Plain(await get_jitang())
     ]))

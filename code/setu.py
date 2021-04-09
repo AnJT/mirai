@@ -36,12 +36,12 @@ async def setu_db(
         data['friend'][str(member.id)]=member.id
     
     index = str(group.id)+str(member.id)
-    if message.asDisplay().startswith("开启青少年模式"):
+    if ''.join(message.asDisplay().lower().strip().split()) == "r18down":
         data['r18'][index]=0
         await app.sendGroupMessage(group,MessageChain.create([
             At(member.id),Plain("懂了")
         ]))
-    if message.asDisplay().startswith("开启lsp模式"):
+    if ''.join(message.asDisplay().lower().strip().split()) == "r18on":
         data['r18'][index]=1
         await app.sendGroupMessage(group,MessageChain.create([
             At(member.id),Plain("懂了")

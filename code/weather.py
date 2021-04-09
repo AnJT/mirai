@@ -53,12 +53,13 @@ async def weather(
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
-    if not message.asDisplay().startswith("天气"):
-        return
-    if message.asDisplay().count("预报") or message.asDisplay().count("预测"):
-        reply = await get_forecast_weather()
-    else:
-        reply = await get_now_weather()
-    await app.sendGroupMessage(group,MessageChain.create([
-        At(member.id),Plain(reply)
-    ]))
+    try:
+        if message.asDisplay() == "天气":
+            reply = await get_now_weather()
+        if message.asDisplay() == "天气预报":
+            reply = await get_forecast_weather()
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain(reply)
+        ]))
+    except:
+        pass

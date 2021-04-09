@@ -64,10 +64,9 @@ async def daxuexi(
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
-    if not message.asDisplay().startswith("青年大学习"):
-        return
-    newest_data = await get_newest_info()
-    reply = await get_reply(newest_data, True)
-    await app.sendGroupMessage(group,MessageChain.create([
-        At(member.id),Plain(reply)
-    ]))
+    if message.asDisplay() == "青年大学习" or message.asDisplay() == "大学习":
+        newest_data = await get_newest_info()
+        reply = await get_reply(newest_data, True)
+        await app.sendGroupMessage(group,MessageChain.create([
+            At(member.id),Plain(reply)
+        ]))

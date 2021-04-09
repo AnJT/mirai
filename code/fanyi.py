@@ -40,21 +40,29 @@ async def get_fanyi(content):
                 raise e
 
 def stop(content):
-    if content == '天气':
-        return True
-    if content == '天气预报':
+    if content.startswith('接龙'):
         return True
     if content.startswith('选择'):
         return True
-    if ''.join(content.lower().strip().split()).startswith("dailyenglish"):
+    if content.startswith('lang'):
         return True
-    if content == '青年大学习':
+    if content.startswith('guess'):
+        return True
+    if ''.join(content.lower().strip().split()) == "dailyenglish":
+        return True
+    if content == '青年大学习' or content == '大学习':
         return True
     if content == '毒鸡汤':
         return True
+    if content == 'lc' or content == 'leetcode':
+        return True
+    if ''.join(content.lower().strip().split()) == "r18down" or ''.join(content.lower().strip().split()) == "r18on":
+        return True
     if content=="美女" or content=="色图" or content=="涩图" or content=="来点美女" or content=="来点色图" or content=="来点涩图":
         return True
-    if content == '开启青少年模式' or content =='开启lsp模式':
+    if content == '天气':
+        return True
+    if content == '天气预报':
         return True
     return False
 
@@ -64,7 +72,7 @@ async def fanyi(
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
-    if message.asDisplay().startswith("翻译"):
+    if message.asDisplay() == "翻译":
         f=open('mydata.json')
         data=json.load(f)
         f.close()
@@ -93,13 +101,14 @@ async def fanyi(
                 ]))
             except:
                 if stop(content.messageChain.asDisplay()) == True:
-                    continue
-                if content.messageChain.asDisplay().startswith("翻译"):
+                    data['started_fanyi'][index] = False
+                    break
+                if content.messageChain.asDisplay() == "翻译":
                     await app.sendGroupMessage(group,MessageChain.create([
                         At(content.send.id),Plain("好的")
                     ]))
                     return
-                if content.messageChain.asDisplay().startswith("结束") or content.messageChain.asDisplay().startswith("二狗"):
+                if content.messageChain.asDisplay() == "结束" or content.messageChain.asDisplay() == "二狗":
                     data['started_fanyi'][index] = False
                     break
                 # print(content)

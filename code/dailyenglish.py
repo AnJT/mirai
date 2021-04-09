@@ -41,7 +41,7 @@ async def daily_english(
     app: GraiaMiraiApplication,
     group: Group, member: Member,
 ):  
-    if ''.join(message.asDisplay().lower().strip().split()).startswith("dailyenglish"):
+    if ''.join(message.asDisplay().lower().strip().split()) == "dailyenglish":
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Plain(await get_daily_english())
     ]))

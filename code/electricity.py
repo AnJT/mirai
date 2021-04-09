@@ -61,7 +61,7 @@ async def dianfei(
 ):  
     if not group.id==1020661362:
         return
-    if message.asDisplay().startswith('电费'):
+    if message.asDisplay() == '电费':
         elec=get_electricity()
         await app.sendGroupMessage(group,MessageChain.create([
             At(member.id),Plain(elec)

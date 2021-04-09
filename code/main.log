@@ -16,3 +16,4 @@
 [2021-04-09 23:30:59,914][INFO]: websocket: ping task created
 [2021-04-09 23:31:05,300][INFO]: 246987206: [bbb(537077670] ajt（｀Δ´）！(342472121) -> '[mirai:source:2237,1617982265]涩图'
 [2021-04-09 23:31:11,064][INFO]: [BOT 246987206] Group(537077670) <- '[mirai:at:342472121,None][mirai:image:{5757942D-FFF2-810F-868D-5F49D2593478}.jpg]'
+[2021-04-09 23:33:17,969][INFO]: 246987206: [bbb(537077670] ajt（｀Δ´）！(342472121) -> '[mirai:source:2239,1617982397]from captcha import getCaptcha\nfrom chat import xiaolan\nfrom chengyu import chengyu\nfrom choice import choice\nfrom compile import compile\nfrom dailyenglish import daily_english\nfrom daxuexi import daxuexi, daxuexi_remind\nfrom electricity import dianfei\nfrom fanyi import fanyi\nfrom guess import guess\nfrom jinyan import jinyan\nfrom jitang import jitang\nfrom lc import daily_lc, daily_lc_scheduled\nfrom setu import setu, setu_db\nfrom startup import app, loop\nfrom weather import weather'

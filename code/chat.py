@@ -49,23 +49,30 @@ def get_reply(content):
     return resp.json()['Response']['Reply']
 
 def stop(content):
+    if content.startswith('接龙'):
+        return True
+    if content.startswith('选择'):
+        return True
+    if content.startswith('lang'):
+        return True
+    if content.startswith('guess'):
+        return True
+    if ''.join(content.lower().strip().split()) == "dailyenglish":
+        return True
+    if content == '青年大学习' or content == '大学习':
+        return True
+    if content == '毒鸡汤':
+        return True
+    if content == 'lc' or content == 'leetcode':
+        return True
+    if ''.join(content.lower().strip().split()) == "r18down" or ''.join(content.lower().strip().split()) == "r18on":
+        return True
+    if content=="美女" or content=="色图" or content=="涩图" or content=="来点美女" or content=="来点色图" or content=="来点涩图":
+        return True
     if content == '天气':
         return True
     if content == '天气预报':
         return True
-    if content.startswith('选择'):
-        return True
-    if ''.join(content.lower().strip().split()).startswith("dailyenglish"):
-        return True
-    if content == '青年大学习':
-        return True
-    if content == '毒鸡汤':
-        return True
-    if content=="美女" or content=="色图" or content=="涩图" or content=="来点美女" or content=="来点色图" or content=="来点涩图":
-        return True
-    if content == '开启青少年模式' or content =='开启lsp模式':
-        return True
-    
     return False
     
 
@@ -79,14 +86,18 @@ async def xiaolan(
     content=message.asDisplay()
     index=str(group.id)+str(member.id)
 
-    if stop(content) == True:
-        return
-
     f=open('mydata.json')
     data=json.load(f)
     data.setdefault("started_xiaolan",{})
+    f.close()
 
-    if content.startswith("翻译"):
+    if stop(content) == True:
+        data["started_xiaolan"][index]=False
+        with open('mydata.json','w+') as f:
+            json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
+        return
+
+    if content == "翻译":
         data["started_xiaolan"][index]=False
         with open('mydata.json','w+') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
@@ -97,13 +108,13 @@ async def xiaolan(
         At(member.id),Plain(get_reply(content))
     ]))
     else:
-        if message.asDisplay().startswith("二狗"):
+        if message.asDisplay() == "二狗":
             await app.sendGroupMessage(group, MessageChain.create([
                 At(member.id), Plain("我在！")
             ]))
             data["started_xiaolan"][index]=True
 
-    if content.startswith("再见") or content.startswith("拜拜"):
+    if content == "再见" or content == "拜拜" or content == "二狗再见" or content == "二狗拜拜":
         data["started_xiaolan"][index]=False
 
     with open('mydata.json','w+') as f:
