@@ -1,45 +1,60 @@
-[2021-04-10 16:28:47,349][INFO]: initializing app...
+[2021-04-11 00:16:35,965][INFO]: initializing app...
+[2021-04-11 00:16:35,980][INFO]: detecting remote's version...
+[2021-04-11 00:16:35,986][INFO]: detected remote's version: 1.9.8
+[2021-04-11 00:16:35,998][INFO]: using pure websocket to receive event
+[2021-04-11 00:16:35,998][INFO]: event receive method checked.
+[2021-04-11 00:16:35,998][INFO]: this application's initialization has been completed.
+[2021-04-11 00:16:35,998][INFO]: --- setting start ---
+[2021-04-11 00:16:35,998][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7f77cd2bf5e0>
+[2021-04-11 00:16:35,998][INFO]: enable log of chat: yes
+[2021-04-11 00:16:35,998][INFO]: debug: no
+[2021-04-11 00:16:35,998][INFO]: version(remote): 1.9.8
+[2021-04-11 00:16:35,999][INFO]: --- setting end ---
+[2021-04-11 00:16:35,999][INFO]: application has been initialized, used 0.0334s
+[2021-04-11 00:16:35,999][INFO]: websocket daemon: websocket connection starting...
+[2021-04-11 00:16:36,006][INFO]: websocket: connected
+[2021-04-11 00:16:36,006][INFO]: websocket: ping task created
+[2021-04-11 00:16:54,500][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4721,1618071413]接龙 哷哸哹哻哼哽哾哿唀唁唂唃呗唅唆唈唉唊唋唌唍唎唏唑唒唓唔唣唖唗唘唙吣唛唜唝唞唟唠唡唢唣唤唥唦唧唨唩唪唫唬唭唯唰唲唳唴唵唶唷念唹唺唻唼唽唾唿啀啁啃啄啅啇啈啉啋啌啍啎问啐啑啒启啔啕啖啖啘啙啚啛啜啝哑启啠啡唡衔啥啦啧啨啩啪啫啬啭啮啯啰啱啲啳啴啵啶啷啹啺啻啼啽啾啿喀喁喂喃善喅喆喇喈喉喊喋喌喍喎喏喐喑喒喓喔喕喖喗喙喛喞喟喠喡喢喣喤喥喦喨喩喯喭喯喰喱哟喳喴喵営喷喸喹喺喼喽喾喿嗀嗁嗂嗃嗄嗅呛啬嗈嗉唝嗋嗌嗍吗嗏嗐嗑嗒'
 
--------------------------------------------------------------------------------
-main.py 19 <module>
-app.launch_blocking()
+嗒然若丧
 
-__init__.py 1574 launch_blocking
-loop.run_until_complete(self.initialize())
+[2021-04-11 00:16:55,311][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]\n嗒然若丧\n'
+[2021-04-11 00:17:09,964][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4723,1618071429]接龙 叧叨叭叱叴叵叺叻叼叽叾卟叿吀吁吂吅吆吇吋吒吔吖吘吙吚吜吡吢吣吤吥吧吩吪吭吮吰吱吲呐吷吺吽呁呃呄呅呇呉呋呋呌呍呎呏呐呒呓呔呕呗呙呚呛呜呝呞呟呠呡呢呣呤呥呦呧周呩呪呫呬呭呮呯呰呱呲呴呶呵呷呸呹呺呻呾呿咀咁咂咃咄咅咇咈咉咊咋咍咎咐咑咓咔咕咖咗咘咙咚咛咜咝咞咟咠咡咢咣咤咥咦咧咨咩咪咫咬咭咮咯咰咲咳咴咵咶啕咹咺咻呙咽咾咿哂哃哅哆哇哈哊哋哌哎哏哐哑哒哓哔哕哖哗哘哙哚哛哜哝哞哟哠咔哣哤哦哧哩哪哫哬哯哰唝哵哶哷哸哹哻哼哽哾哿唀唁唂唃呗唅唆唈唉唊唋唌唍唎唏唑唒唓唔唣唖唗唘唙吣唛唜唝唞唟唠唡唢唣唤唥唦唧唨唩唪唫唬唭唯唰唲唳唴唵唶唷念唹唺唻唼唽唾唿啀啁啃啄啅啇啈啉啋啌啍啎问啐啑啒启啔啕啖啖啘啙啚啛啜啝哑启啠啡唡衔啥啦啧啨啩啪啫啬啭啮啯啰啱啲啳啴啵啶啷啹啺啻啼啽啾啿喀喁喂喃善喅喆喇喈喉喊喋喌喍喎喏喐喑喒喓喔喕喖喗喙喛喞喟喠喡喢喣喤喥喦喨喩喯喭喯喰喱哟喳喴喵営喷喸喹喺喼喽喾喿嗀嗁嗂嗃嗄嗅呛啬嗈嗉唝嗋嗌嗍吗嗏嗐嗑嗒嗓嗕嗖嗗嗘嗙呜嗛嗜嗝嗞嗟嗠嗡嗢嗧嗨唢嗪嗫嗬嗭嗮嗰嗱嗲嗳嗴嗵哔嗷嗸嗹'
+[2021-04-11 00:17:10,744][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]xs，根本找不到'
 
-base_events.py 616 run_until_complete
-return future.result()
+嗒然若丧
 
-__init__.py 1464 initialize
-await self.authenticate()
+[2021-04-11 00:17:11,856][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4725,1618071431]接龙 哷哸哹哻哼哽哾哿唀唁唂唃呗唅唆唈唉唊唋唌唍唎唏唑唒唓唔唣唖唗唘唙吣唛唜唝唞唟唠唡唢唣唤唥唦唧唨唩唪唫唬唭唯唰唲唳唴唵唶唷念唹唺唻唼唽唾唿啀啁啃啄啅啇啈啉啋啌啍啎问啐啑啒启啔啕啖啖啘啙啚啛啜啝哑启啠啡唡衔啥啦啧啨啩啪啫啬啭啮啯啰啱啲啳啴啵啶啷啹啺啻啼啽啾啿喀喁喂喃善喅喆喇喈喉喊喋喌喍喎喏喐喑喒喓喔喕喖喗喙喛喞喟喠喡喢喣喤喥喦喨喩喯喭喯喰喱哟喳喴喵営喷喸喹喺喼喽喾喿嗀嗁嗂嗃嗄嗅呛啬嗈嗉唝嗋嗌嗍吗嗏嗐嗑嗒'
+[2021-04-11 00:17:12,624][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n嗒然若丧\n'
+[2021-04-11 00:17:27,207][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4727,1618071446]接龙 根本找不到'
+[2021-04-11 00:17:27,938][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1574996073,None]xs，根本找不到'
+[2021-04-11 00:17:37,530][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4729,1618071457]help help'
+[2021-04-11 00:17:38,322][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n[mirai:face:298]你指定是有什么大病'
+[2021-04-11 00:17:38,654][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4731,1618071458]接龙 ，'
 
-utilles.py 27 wrapper
-return await func(self, *args, **kwargs)
+神抶电击
+神清气朗
+神差鬼遣
+神流气鬯
+神魂颠倒
 
-__init__.py 301 authenticate
-async with self.session.post(
+[2021-04-11 00:17:59,000][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4732,1618071478]接龙 嵩神'
+[2021-04-11 00:17:59,773][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n神抶电击\n神清气朗\n神差鬼遣\n神流气鬯\n神魂颠倒\n'
+[2021-04-11 00:18:28,733][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4734,1618071508]接龙接龙'
 
-client.py 1117 __aenter__
-self._resp = await self._coro
+龙盘虎拏
+龙兴凤举
+龙攀凤附
+龙头蛇尾
+龙翔凤舞
 
-client.py 520 _request
-conn = await self._connector.connect(
+[2021-04-11 00:18:29,523][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n龙盘虎拏\n龙兴凤举\n龙攀凤附\n龙头蛇尾\n龙翔凤舞\n'
+[2021-04-11 00:18:43,088][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4736,1618071522]接龙 RNG牛逼'
 
-connector.py 535 connect
-proto = await self._create_connection(req, traces, timeout)
+逼良为娼
+逼上梁山
+逼不得已
+逼人太甚
 
-connector.py 892 _create_connection
-_, proto = await self._create_direct_connection(req, traces, timeout)
-
-connector.py 1051 _create_direct_connection
-raise last_exc
-
-connector.py 1020 _create_direct_connection
-transp, proto = await self._wrap_create_connection(
-
-connector.py 975 _wrap_create_connection
-raise client_error(req.connection_key, exc) from exc
-
-aiohttp.client_exceptions.ClientConnectorError:
-ConnectionKey(host='localhost', port=8080, is_ssl=False, ssl=None, proxy=None, proxy_auth=None, proxy_headers_hash=None)
-[Errno 111] Connect call failed ('127.0.0.1', 8080)
+[2021-04-11 00:18:43,863][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n逼良为娼\n逼上梁山\n逼不得已\n逼人太甚\n'
+[2021-04-11 00:18:53,230][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4738,1618071532]接接龙龙'

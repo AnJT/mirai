@@ -45,7 +45,7 @@ async def help_fun(
     content = ''.join(saying.asDisplay().lower().strip().split())
     if content == '成语接龙':
         reply = '成语接龙，指令为：接龙 [成语] 例如：接龙 一个顶俩 或者 接龙 俩'
-    if content == '选择':
+    elif content == '选择':
         reply = '选择，指令为：选择[被选项] 例如：选择 1 2 3'
     elif content == 'compile':
         reply = '代码编译器，指令为：lang [语言]; [code] 例如 lang python; print("好耶")\n\
@@ -72,6 +72,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
     elif content == '翻译':
         reply = '翻译,输入指令 翻译 即可开启翻译，翻译支持图片翻译和文字翻译，输入指令 结束 来结束翻译，同时其他功能指令也会结束翻译，\
 以便其他功能的使用'
+    elif content == 'help':
+        reply = '你指定是有什么大病'
     else:
         reply = '好小子，这个功能就交给你了'
     await app.sendGroupMessage(group, MessageChain.create([

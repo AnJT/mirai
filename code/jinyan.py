@@ -26,7 +26,7 @@ async def jinyan(
     ntime = time.time()
     times= []
     for i in data['jinyan'][idx]:
-        if ntime-i<3.0:
+        if ntime-i<5.0:
             times.append(i)
     times.append(ntime)
     data['jinyan'][idx] = times
