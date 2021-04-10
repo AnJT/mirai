@@ -32,7 +32,7 @@ async def jinyan(
     data['jinyan'][idx] = times
     if len(times) > 5:
         try:
-            if idx not in data['jinyaned']:
+            if idx in data['jinyaned']:
                 try:
                     # 已经设置禁言，无需再禁
                     if time.time()-data['jinyaned'][idx]<60.0:

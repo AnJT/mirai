@@ -41,5 +41,7 @@ my qq bot
   运行`vim ./config/Console/AutoLogin.yml`修改`account`(qq账号)以及`value`(密码)，:wq保存退出
 
   再次运行`./mcl`即可自动登录
+  
+## Win类似
 
 参考自https://angelica.moe/index.php/2021/02/17/linux-install-mirai-robot/

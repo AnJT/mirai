@@ -1,24 +1,45 @@
-[2021-04-10 14:23:54,579][INFO]: initializing app...
-[2021-04-10 14:23:54,596][INFO]: detecting remote's version...
-[2021-04-10 14:23:54,599][INFO]: detected remote's version: 1.9.8
-[2021-04-10 14:23:54,606][INFO]: using pure websocket to receive event
-[2021-04-10 14:23:54,606][INFO]: event receive method checked.
-[2021-04-10 14:23:54,606][INFO]: this application's initialization has been completed.
-[2021-04-10 14:23:54,606][INFO]: --- setting start ---
-[2021-04-10 14:23:54,606][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7f38f56265e0>
-[2021-04-10 14:23:54,606][INFO]: enable log of chat: yes
-[2021-04-10 14:23:54,606][INFO]: debug: no
-[2021-04-10 14:23:54,606][INFO]: version(remote): 1.9.8
-[2021-04-10 14:23:54,606][INFO]: --- setting end ---
-[2021-04-10 14:23:54,606][INFO]: application has been initialized, used 0.0271s
-[2021-04-10 14:23:54,607][INFO]: websocket daemon: websocket connection starting...
-[2021-04-10 14:23:54,615][INFO]: websocket: connected
-[2021-04-10 14:23:54,615][INFO]: websocket: ping task created
-[2021-04-10 14:23:58,375][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4380,1618035838]色图'
-[2021-04-10 14:24:00,923][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None][mirai:image:{2A3B6B21-E6C4-334F-B2E5-C17DB1A86534}.jpg]'
-[2021-04-10 14:31:45,706][INFO]: 246987206: [bot(1020661362] 茕珩(1658460876) -> '[mirai:source:4382,1618036305]help 毒鸡汤'
-[2021-04-10 14:31:46,043][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1658460876,None]\n[mirai:face:298]毒鸡汤，输入指令 毒鸡汤 即可获取一句毒鸡汤'
-[2021-04-10 14:31:51,446][INFO]: 246987206: [bot(1020661362] 茕珩(1658460876) -> '[mirai:source:4384,1618036311]毒鸡汤'
-[2021-04-10 14:31:51,814][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1658460876,None]你可以像只猪一样懒，却无法像只猪一样，懒得心安理得。'
-[2021-04-10 14:32:15,762][INFO]: 246987206: [bot(1020661362] 茕珩(1658460876) -> '[mirai:source:4386,1618036335]青年大学习'
-[2021-04-10 14:32:16,217][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1658460876,None]狗都不做之青年大学习\n青年大学习：开天辟地的大事变\nhttps://h5.cyol.com/special/daxuexi/lduvrxfhae/m.html\n更新于2021-03-15 10:28:39'
+[2021-04-10 16:28:47,349][INFO]: initializing app...
+
+-------------------------------------------------------------------------------
+main.py 19 <module>
+app.launch_blocking()
+
+__init__.py 1574 launch_blocking
+loop.run_until_complete(self.initialize())
+
+base_events.py 616 run_until_complete
+return future.result()
+
+__init__.py 1464 initialize
+await self.authenticate()
+
+utilles.py 27 wrapper
+return await func(self, *args, **kwargs)
+
+__init__.py 301 authenticate
+async with self.session.post(
+
+client.py 1117 __aenter__
+self._resp = await self._coro
+
+client.py 520 _request
+conn = await self._connector.connect(
+
+connector.py 535 connect
+proto = await self._create_connection(req, traces, timeout)
+
+connector.py 892 _create_connection
+_, proto = await self._create_direct_connection(req, traces, timeout)
+
+connector.py 1051 _create_direct_connection
+raise last_exc
+
+connector.py 1020 _create_direct_connection
+transp, proto = await self._wrap_create_connection(
+
+connector.py 975 _wrap_create_connection
+raise client_error(req.connection_key, exc) from exc
+
+aiohttp.client_exceptions.ClientConnectorError:
+ConnectionKey(host='localhost', port=8080, is_ssl=False, ssl=None, proxy=None, proxy_auth=None, proxy_headers_hash=None)
+[Errno 111] Connect call failed ('127.0.0.1', 8080)
