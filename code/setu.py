@@ -65,7 +65,7 @@ async def setu(
                 r18=int(data['r18'][index])
         except:
             await app.sendGroupMessage(group, MessageChain.create([
-                At(member.id), Plain("已默认为您开启青少年模式，若想开启lsp模式，请随时输入“开启lsp模式”")
+                At(member.id), Plain("已默为r18 down模式，若想开启r18模式，请随时输入“r18 on”")
             ]))
             f=open('mydata.json')
             data=json.load(f)

@@ -32,11 +32,9 @@ async def get_output(lang, code):
         return 'yysy，这个语言还是你懂得多！'
     data['fileext'] = js.get(lang)
     data['code'] = code.lstrip()
-    print(code.lstrip())
     async with aiohttp.ClientSession() as session:
         async with session.post(url=url, data=data, headers=headers) as resp:
             result = await resp.json()
-            print(result)
             if result['errors'] =='\n\n':
                 reply = 'output: ' + result['output']
             else:
