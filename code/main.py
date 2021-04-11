@@ -5,6 +5,7 @@ from choice import choice
 from compile import compile
 from dailyenglish import daily_english
 from daxuexi import daxuexi, daxuexi_remind, get_reply
+from diu import diu
 from electricity import dianfei
 from fanyi import fanyi
 from guess import guess
