@@ -74,7 +74,6 @@ def get_bytes(qq):
     img_b = cv2.imencode('.png', hh_img)[1].tobytes()
     return img_b
 
-get_bytes('342472121')
 
 @bcc.receiver("GroupMessage", dispatchers=[
     Kanata([FullMatch("丢"), RequireParam(name="saying")])
@@ -89,7 +88,6 @@ async def diu(
         at = saying.get(At)
         for i in at:
             qq = i.target
-            print(qq)
             bs = get_bytes(str(qq))
             # print(type(bs))
             await app.sendGroupMessage(group, MessageChain.create([

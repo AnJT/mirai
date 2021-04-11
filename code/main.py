@@ -13,6 +13,7 @@ from help import help, help_fun
 from jinyan import jinyan
 from jitang import jitang
 from lc import daily_lc, daily_lc_scheduled
+from pa import pa
 from setu import setu, setu_db
 from startup import app, loop
 from weather import weather

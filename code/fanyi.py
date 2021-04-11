@@ -50,6 +50,8 @@ def stop(content):
         return True
     if content.startswith('丢'):
         return True
+    if content.startswith('爬'):
+        return True
     if ''.join(content.lower().strip().split()) == "dailyenglish":
         return True
     if content == '青年大学习' or content == '大学习':

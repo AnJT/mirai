@@ -31,6 +31,7 @@ async def help(
             Face(faceId=298),Plain('天气\n'),
             Face(faceId=298),Plain('翻译\n'),
             Face(faceId=298),Plain('丢\n'),
+            Face(faceId=298),Plain('爬\n'),
             Face(faceId=298),Plain("具体请help 功能")
         ]))
 
@@ -75,6 +76,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
 以便其他功能的使用'
     elif content == '丢':
         reply = '丢，输入指令 丢 @[一个人]，那就可以丢他了'
+    elif content == '爬':
+        reply = '爬，输入指令 爬 @[一个人]，那就可以让他爬了'
     elif content == 'help':
         reply = '你指定是有什么大病'
     else:
