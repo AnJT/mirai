@@ -1,19 +1,19 @@
-[2021-04-11 23:21:30,808][INFO]: initializing app...
-[2021-04-11 23:21:30,819][INFO]: detecting remote's version...
-[2021-04-11 23:21:30,821][INFO]: detected remote's version: 1.9.8
-[2021-04-11 23:21:30,825][INFO]: using pure websocket to receive event
-[2021-04-11 23:21:30,825][INFO]: event receive method checked.
-[2021-04-11 23:21:30,826][INFO]: this application's initialization has been completed.
-[2021-04-11 23:21:30,826][INFO]: --- setting start ---
-[2021-04-11 23:21:30,826][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7ff521fc86d0>
-[2021-04-11 23:21:30,826][INFO]: enable log of chat: yes
-[2021-04-11 23:21:30,826][INFO]: debug: no
-[2021-04-11 23:21:30,826][INFO]: version(remote): 1.9.8
-[2021-04-11 23:21:30,826][INFO]: --- setting end ---
-[2021-04-11 23:21:30,826][INFO]: application has been initialized, used 0.0178s
-[2021-04-11 23:21:30,826][INFO]: websocket daemon: websocket connection starting...
-[2021-04-11 23:21:30,829][INFO]: websocket: connected
-[2021-04-11 23:21:30,829][INFO]: websocket: ping task created
-[2021-04-12 00:00:01,018][INFO]: [BOT 246987206] Group(1020661362) <- '狗都不做之lc每日一题:\n179.最大数.Medium\n给定一组非负整数 nums，重新排列每个数的顺序（每个数不可拆分）使之组成一个最大的整数。\n注意：输出结果可能非常大，所以你需要返回一个字符串而不是整数。\n\xa0\n示例 1：\n\n输入：nums = [_10,2]\n输出："210"\n示例\xa02：\n\n输入：nums = [_3,30,34,5,9]\n输出："9534330"\n\n示例 3：\n\n输入：nums = [_1]\n输出："1"\n\n示例 4：\n\n输入：nums = [_10]\n输出："10"\n\n\xa0\n提示：\n\n1 <= nums.length <= 100\n0 <= nums[_i] <= 109\n\n本题链接:https://leetcode-cn.com/problems/largest-number'
-[2021-04-12 00:06:30,639][INFO]: 246987206: [bot(1020661362] Algizzzzzz(1574996073) -> '[mirai:source:4923,1618157190]上当了  居然不是丑数3'
-[2021-04-12 00:06:51,769][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4924,1618157211]上大逼当了'
+/root/mirai/code
+[2021-04-12 01:05:41,247][INFO]: initializing app...
+[2021-04-12 01:05:41,278][INFO]: detecting remote's version...
+[2021-04-12 01:05:41,285][INFO]: detected remote's version: 1.9.8
+[2021-04-12 01:05:41,297][INFO]: using pure websocket to receive event
+[2021-04-12 01:05:41,300][INFO]: event receive method checked.
+[2021-04-12 01:05:41,300][INFO]: this application's initialization has been completed.
+[2021-04-12 01:05:41,300][INFO]: --- setting start ---
+[2021-04-12 01:05:41,301][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7fdfa53076d0>
+[2021-04-12 01:05:41,301][INFO]: enable log of chat: yes
+[2021-04-12 01:05:41,301][INFO]: debug: no
+[2021-04-12 01:05:41,301][INFO]: version(remote): 1.9.8
+[2021-04-12 01:05:41,301][INFO]: --- setting end ---
+[2021-04-12 01:05:41,301][INFO]: application has been initialized, used 0.0535s
+[2021-04-12 01:05:41,303][INFO]: websocket daemon: websocket connection starting...
+[2021-04-12 01:05:41,321][INFO]: websocket: connected
+[2021-04-12 01:05:41,321][INFO]: websocket: ping task created
+[2021-04-12 01:05:45,741][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4942,1618160745]help'
+[2021-04-12 01:05:46,538][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n[mirai:face:298]成语接龙\n[mirai:face:298]选择\n[mirai:face:298]compile\n[mirai:face:298]guess\n[mirai:face:298]智能聊天\n[mirai:face:298]daily english\n[mirai:face:298]青年大学习\n[mirai:face:298]毒鸡汤\n[mirai:face:298]leetcode\n[mirai:face:298]色图\n[mirai:face:298]天气\n[mirai:face:298]翻译\n[mirai:face:298]丢\n[mirai:face:298]具体请help 功能'
