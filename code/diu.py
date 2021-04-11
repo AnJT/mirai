@@ -63,8 +63,8 @@ def get_bytes(qq):
     hh_img = cv2.imread('/root/mirai/code/img/hh.png', cv2.IMREAD_UNCHANGED)
     qq_img = url_to_image(img_url.replace('##',qq))
     qq_img_circle = img_deal(qq_img)
-    print(qq_img_circle.shape)
-    print(hh_img.shape)
+    # print(qq_img_circle.shape)
+    # print(hh_img.shape)
     for i in range(140):
         for j in range(140):
             if (70-i)**2+(70-j)**2 > 70**2:
@@ -91,7 +91,7 @@ async def diu(
             qq = i.target
             print(qq)
             bs = get_bytes(str(qq))
-            print(type(bs))
+            # print(type(bs))
             await app.sendGroupMessage(group, MessageChain.create([
                 Image.fromUnsafeBytes(bs)
             ]))
