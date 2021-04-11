@@ -10,6 +10,7 @@ from electricity import dianfei
 from fanyi import fanyi
 from guess import guess
 from help import help, help_fun
+from huifu import huifu
 from jinyan import jinyan
 from jitang import jitang
 from lc import daily_lc, daily_lc_scheduled

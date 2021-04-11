@@ -1,55 +1,18 @@
-/root/mirai/code
-[2021-04-12 01:05:41,247][INFO]: initializing app...
-[2021-04-12 01:05:41,278][INFO]: detecting remote's version...
-[2021-04-12 01:05:41,285][INFO]: detected remote's version: 1.9.8
-[2021-04-12 01:05:41,297][INFO]: using pure websocket to receive event
-[2021-04-12 01:05:41,300][INFO]: event receive method checked.
-[2021-04-12 01:05:41,300][INFO]: this application's initialization has been completed.
-[2021-04-12 01:05:41,300][INFO]: --- setting start ---
-[2021-04-12 01:05:41,301][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7fdfa53076d0>
-[2021-04-12 01:05:41,301][INFO]: enable log of chat: yes
-[2021-04-12 01:05:41,301][INFO]: debug: no
-[2021-04-12 01:05:41,301][INFO]: version(remote): 1.9.8
-[2021-04-12 01:05:41,301][INFO]: --- setting end ---
-[2021-04-12 01:05:41,301][INFO]: application has been initialized, used 0.0535s
-[2021-04-12 01:05:41,303][INFO]: websocket daemon: websocket connection starting...
-[2021-04-12 01:05:41,321][INFO]: websocket: connected
-[2021-04-12 01:05:41,321][INFO]: websocket: ping task created
-[2021-04-12 01:05:45,741][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4942,1618160745]help'
-[2021-04-12 01:05:46,538][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n[mirai:face:298]成语接龙\n[mirai:face:298]选择\n[mirai:face:298]compile\n[mirai:face:298]guess\n[mirai:face:298]智能聊天\n[mirai:face:298]daily english\n[mirai:face:298]青年大学习\n[mirai:face:298]毒鸡汤\n[mirai:face:298]leetcode\n[mirai:face:298]色图\n[mirai:face:298]天气\n[mirai:face:298]翻译\n[mirai:face:298]丢\n[mirai:face:298]具体请help 功能'
-[2021-04-12 01:07:07,581][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4944,1618160827]丢[mirai:at:1742173607,]'
-1742173607
-[2021-04-12 01:07:09,775][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:image:{2B42A3E4-394F-9422-8B68-91DE20F01778}.png]'
-[2021-04-12 01:10:31,634][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4946,1618161031][mirai:at:246987206,] 爬'
-[2021-04-12 01:10:40,310][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4947,1618161040][mirai:image:{B45FBA4A-6CC5-1599-6D69-F6B5649BFB53}.jpg]可恶'
-[2021-04-12 01:10:42,317][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4948,1618161042]'
-[2021-04-12 01:10:44,090][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4949,1618161043]这个功能还没实现'
-[2021-04-12 01:10:46,564][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4950,1618161046]明天实现'
-[2021-04-12 01:10:50,062][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4951,1618161049]help'
-[2021-04-12 01:10:50,877][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\n[mirai:face:298]成语接龙\n[mirai:face:298]选择\n[mirai:face:298]compile\n[mirai:face:298]guess\n[mirai:face:298]智能聊天\n[mirai:face:298]daily english\n[mirai:face:298]青年大学习\n[mirai:face:298]毒鸡汤\n[mirai:face:298]leetcode\n[mirai:face:298]色图\n[mirai:face:298]天气\n[mirai:face:298]翻译\n[mirai:face:298]丢\n[mirai:face:298]具体请help 功能'
-[2021-04-12 01:11:04,465][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4953,1618161064][mirai:at:246987206,] daily english'
-[2021-04-12 01:11:19,616][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4954,1618161079]daily english'
-[2021-04-12 01:11:20,469][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]\nHe who controls others may be powerful, but he who has mastered himself is mightier still.\n胜人者有力，自胜者强。'
-[2021-04-12 01:11:22,237][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4956,1618161082]daily english'
-[2021-04-12 01:11:23,079][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1742173607,None]\nDoing things change things, no doing things, these things are exactly as they were.\n行动才能改变，没有行动，一切也会原封不动。'
-[2021-04-12 01:11:37,544][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4958,1618161097]guess ajt'
-[2021-04-12 01:11:39,781][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:1742173607,None]ajt maybe:\na军团'
-[2021-04-12 01:12:16,154][INFO]: 246987206: [bot(1020661362] 茕珩(1658460876) -> '[mirai:source:4960,1618161135]丢[mirai:at:1658460876,] '
-1658460876
-[2021-04-12 01:12:17,998][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:image:{CD266E11-5AD7-DF92-6F40-7804936BC205}.png]'
-[2021-04-12 01:12:45,105][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4962,1618161164]丢[mirai:at:246987206,] '
-246987206
-[2021-04-12 01:12:46,970][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:image:{A6B1922C-B443-AACA-93B9-7547B0A5F1CE}.png]'
-[2021-04-12 01:12:55,128][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4964,1618161174]丢[mirai:at:342472121,] '
-342472121
-[2021-04-12 01:12:56,904][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:image:{6020503E-DA17-7251-A3CF-613FBABC8AA6}.png]'
-[2021-04-12 01:14:38,978][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4966,1618161278][mirai:image:{E0FD05ED-BD75-0372-C79E-DA695EB80643}.png]ok搞到了点素材'
-[2021-04-12 01:16:29,169][INFO]: 246987206: [bot(1020661362] 茕珩(1658460876) -> '[mirai:source:4967,1618161388]大家都没睡呀哈哈哈'
-1658460876
-[2021-04-12 01:17:08,647][INFO]: 246987206: [bot(1020661362] 茕珩(1658460876) -> '[mirai:source:4968,1618161428]丢[mirai:at:1658460876,] '
-[2021-04-12 01:17:10,386][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:image:{CD266E11-5AD7-DF92-6F40-7804936BC205}.png]'
-[2021-04-12 01:18:04,406][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4970,1618161484][mirai:image:{EE472993-F4DC-D734-B766-5605F537FFE1}.jpg]打算玩会手机睡了'
-[2021-04-12 01:18:32,843][INFO]: 246987206: [bot(1020661362] 祢雀罗(1742173607) -> '[mirai:source:4971,1618161512]别玩了 早点睡'
-[2021-04-12 01:19:35,189][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4972,1618161574][mirai:image:{DC24AFD0-4B07-E9AF-DAC5-68BD6E8A66CF}.gif]'
-[2021-04-12 01:53:51,617][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4973,1618163631]天气'
-[2021-04-12 01:53:52,408][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None]天气：中雨 温度：16°C 风向：东南 风力：≤3级 湿度：100% \n数据发布于2021-04-12 01:31:50'
+[2021-04-12 03:08:58,335][INFO]: initializing app...
+[2021-04-12 03:08:58,357][INFO]: detecting remote's version...
+[2021-04-12 03:08:58,368][INFO]: detected remote's version: 1.9.8
+[2021-04-12 03:08:58,381][INFO]: using pure websocket to receive event
+[2021-04-12 03:08:58,382][INFO]: event receive method checked.
+[2021-04-12 03:08:58,382][INFO]: this application's initialization has been completed.
+[2021-04-12 03:08:58,382][INFO]: --- setting start ---
+[2021-04-12 03:08:58,382][INFO]: broadcast using: <graia.broadcast.Broadcast object at 0x7f949b0e36d0>
+[2021-04-12 03:08:58,382][INFO]: enable log of chat: yes
+[2021-04-12 03:08:58,382][INFO]: debug: no
+[2021-04-12 03:08:58,382][INFO]: version(remote): 1.9.8
+[2021-04-12 03:08:58,382][INFO]: --- setting end ---
+[2021-04-12 03:08:58,382][INFO]: application has been initialized, used 0.0476s
+[2021-04-12 03:08:58,382][INFO]: websocket daemon: websocket connection starting...
+[2021-04-12 03:08:58,396][INFO]: websocket: connected
+[2021-04-12 03:08:58,396][INFO]: websocket: ping task created
+[2021-04-12 03:09:00,743][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:4983,1618168140]？'
+[2021-04-12 03:09:02,249][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:image:{4DDFE601-D395-8CB0-0210-D108A9614E03}.jpg]'

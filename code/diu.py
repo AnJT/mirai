@@ -15,7 +15,6 @@ from PIL import Image as IMG
 
 from startup import bcc
 
-print(os.getcwd())
 img_url = 'http://q1.qlogo.cn/g?b=qq&nk=##&s=140'
 
 
