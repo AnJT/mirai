@@ -28,6 +28,7 @@ async def help(
             Face(faceId=298),Plain('毒鸡汤\n'),
             Face(faceId=298),Plain('leetcode\n'),
             Face(faceId=298),Plain('色图\n'),
+            Face(faceId=298),Plain('福利\n'),
             Face(faceId=298),Plain('天气\n'),
             Face(faceId=298),Plain('翻译\n'),
             Face(faceId=298),Plain('丢\n'),
@@ -69,6 +70,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
     elif content == '色图':
         reply = '色图，输入指令 色图 or 涩图 or 美女 or 来点色图 or 来点涩图 or 来点美女 即可获取一张色图\n\
 输入指令 r18 on 即可开启r18模式，输入指令 r18 down 即可关闭'
+    elif content == '福利':
+        reply = '福利，输入指令 福利 or 来点福利 即可获取一张福利图'
     elif content == '天气':
         reply = '天气，输入指令 天气 获取当天天气状况，输入指令 天气预报 获取近四天天气状况'
     elif content == '翻译':

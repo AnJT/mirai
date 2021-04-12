@@ -68,6 +68,8 @@ def stop(content):
         return True
     if content == '天气预报':
         return True
+    if content == '福利' or content == '来点福利':
+        return True
     if content == 'help':
         return True
     return False

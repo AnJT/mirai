@@ -8,6 +8,7 @@ from daxuexi import daxuexi, daxuexi_remind, get_reply
 from diu import diu
 from electricity import dianfei
 from fanyi import fanyi
+from fuli import fuli
 from guess import guess
 from help import help, help_fun
 from huifu import huifu

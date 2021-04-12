@@ -1,4 +1,3 @@
-import os
 import random
 import urllib.request as request
 
@@ -12,7 +11,6 @@ from graia.application.message.parser.kanata import Kanata
 from graia.application.message.parser.signature import (FullMatch,
                                                         OptionalParam,
                                                         RequireParam)
-from PIL import Image as IMG
 
 from startup import bcc
 
