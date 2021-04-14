@@ -14,3 +14,37 @@
 [2021-04-14 10:34:46,116][INFO]: websocket daemon: websocket connection starting...
 [2021-04-14 10:34:46,123][INFO]: websocket: connected
 [2021-04-14 10:34:46,123][INFO]: websocket: ping task created
+[2021-04-14 10:35:05,902][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:5459,1618367705]搜色图 zh'
+{'apikey': '32801024603dc3189af642', 'r18': 1, 'num': 1, 'keyword': 'zh'}
+[2021-04-14 10:35:09,256][INFO]: [BOT 246987206] Group(1020661362) <- '[mirai:at:342472121,None][mirai:image:{F06F957B-A78A-403C-0E42-2B74EB11C770}.jpg]'
+[2021-04-14 10:35:17,171][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:5461,1618367716]搜色图 ajt'
+{'apikey': '32801024603dc3189af642', 'r18': 1, 'num': 1, 'keyword': 'ajt'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/graia/broadcast/__init__.py", line 204, in Executor
+    result = await run_always_await_safely(
+  File "/usr/local/lib/python3.8/dist-packages/graia/broadcast/utilles.py", line 30, in run_always_await_safely
+    return await callable(*args, **kwargs)
+  File "/root/mirai/code/setu.py", line 87, in sou_setu
+    await app.sendGroupMessage(group, MessageChain.create([
+  File "/usr/local/lib/python3.8/dist-packages/graia/application/__init__.py", line 67, in wrapped_network_action_callable
+    return await network_action_callable(self, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/graia/application/utilles.py", line 27, in wrapper
+    return await func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/graia/application/__init__.py", line 630, in sendGroupMessage
+    message_result = await message.build()
+  File "/usr/local/lib/python3.8/dist-packages/graia/application/message/chain.py", line 213, in build
+    await run_always_await(
+  File "/usr/local/lib/python3.8/dist-packages/graia/broadcast/utilles.py", line 23, in run_always_await
+    return await any_callable
+  File "/usr/local/lib/python3.8/dist-packages/graia/application/message/elements/internal.py", line 294, in toExternal
+    async with app.session.get(self.url) as response:
+  File "/usr/local/lib/python3.8/dist-packages/aiohttp/client.py", line 1117, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.8/dist-packages/aiohttp/client.py", line 492, in _request
+    req = self._request_class(
+  File "/usr/local/lib/python3.8/dist-packages/aiohttp/client_reqrep.py", line 305, in __init__
+    self.update_host(url)
+  File "/usr/local/lib/python3.8/dist-packages/aiohttp/client_reqrep.py", line 366, in update_host
+    raise InvalidURL(url)
+aiohttp.client_exceptions.InvalidURL: xs,%E6%B2%A1%E6%89%BE%E5%88%B0
+[2021-04-14 10:35:38,118][INFO]: 246987206: [bot(1020661362] ajt（｀Δ´）！(342472121) -> '[mirai:source:5462,1618367737]可恶还是有Bug'

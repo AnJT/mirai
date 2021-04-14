@@ -23,14 +23,14 @@ params = {
 async def get_setu(r18:int, keyword='')->str:
     params["r18"] = r18
     params["keyword"] = ''.join(keyword.lower().strip().split())
-    print(params)
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, params=params) as resp:
             data = await resp.json()
             try:
-                return data["data"][0]["url"]
+                result = data["data"][0]["url"]
             except:
-                return 'xs,没找到'
+                result = 'xs,没找到'
+            return result
 
 
 @bcc.receiver("GroupMessage")
@@ -83,10 +83,15 @@ async def sou_setu(
         data['r18'][index]=0
         with open('mydata.json','w+') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
-    img_url = await get_setu(r18, saying.asDisplay())
-    await app.sendGroupMessage(group, MessageChain.create([
-        At(member.id),Image.fromNetworkAddress(url=img_url)
-    ]))
+    result = await get_setu(r18, saying.asDisplay())
+    if result == 'xs,没找到':
+        await app.sendGroupMessage(group, MessageChain.create([
+            At(member.id),Plain(result)
+        ]))
+    else:
+        await app.sendGroupMessage(group, MessageChain.create([
+            At(member.id),Image.fromNetworkAddress(url=result)
+        ]))
 
 @bcc.receiver("GroupMessage")
 async def setu(
@@ -112,8 +117,8 @@ async def setu(
             with open('mydata.json','w+') as f:
                 json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
 
-        img_url = await get_setu(r18)
-
+        result = await get_setu(r18)
+  
         await app.sendGroupMessage(group, MessageChain.create([
-            At(member.id),Image.fromNetworkAddress(url=img_url)
+            At(member.id),Image.fromNetworkAddress(url=result)
         ]))
