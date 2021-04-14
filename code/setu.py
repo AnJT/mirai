@@ -27,8 +27,10 @@ async def get_setu(r18:int, keyword='')->str:
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, params=params) as resp:
             data = await resp.json()
-            print(data)
-            return data["data"][0]["url"]
+            try:
+                return data["data"][0]["url"]
+            except:
+                return 'xs,没找到'
 
 
 @bcc.receiver("GroupMessage")
