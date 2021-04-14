@@ -56,6 +56,16 @@ def img_deal(img):
 
     return img_new
 
+def rotate(image, angle, center=None, scale=1.0): #1
+    (h, w) = image.shape[:2] #2
+    if center is None: #3
+        center = (w // 2, h // 2) #4
+ 
+    M = cv2.getRotationMatrix2D(center, angle, scale) #5
+ 
+    rotated = cv2.warpAffine(image, M, (w, h)) #6
+    return rotated #7
+
 def get_bytes(qq):
     pa_url = '/root/mirai/code/img/pa'
     pa_url += str(random.randint(1, 9)) + '.png'
@@ -63,6 +73,7 @@ def get_bytes(qq):
     qq_img = url_to_image(img_url.replace('##',qq))
     if pa_img.shape[2]==4:
         qq_img = img_deal(qq_img)
+    qq_img = rotate(qq_img, random.randint(0, 360))
     for i in range(100):
         for j in range(100):
             if (50-i)**2+(50-j)**2 > 50**2:

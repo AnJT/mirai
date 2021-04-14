@@ -1,4 +1,5 @@
 import os
+import random
 import urllib.request as request
 
 import cv2
@@ -58,10 +59,21 @@ def img_deal(img):
 
     return img_new
 
+def rotate(image, angle, center=None, scale=1.0): #1
+    (h, w) = image.shape[:2] #2
+    if center is None: #3
+        center = (w // 2, h // 2) #4
+ 
+    M = cv2.getRotationMatrix2D(center, angle, scale) #5
+ 
+    rotated = cv2.warpAffine(image, M, (w, h)) #6
+    return rotated #7
+
 def get_bytes(qq):
     hh_img = cv2.imread('/root/mirai/code/img/hh.png', cv2.IMREAD_UNCHANGED)
     qq_img = url_to_image(img_url.replace('##',qq))
     qq_img_circle = img_deal(qq_img)
+    qq_img_circle = rotate(qq_img_circle, random.randint(0, 360))
     # print(qq_img_circle.shape)
     # print(hh_img.shape)
     for i in range(140):
