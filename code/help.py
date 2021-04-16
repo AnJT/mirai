@@ -33,6 +33,7 @@ async def help(
             Face(faceId=298),Plain('翻译\n'),
             Face(faceId=298),Plain('丢\n'),
             Face(faceId=298),Plain('爬\n'),
+            Face(faceId=298),Plain('nokia\n'),
             Face(faceId=298),Plain("具体请help 功能")
         ]))
 
@@ -69,6 +70,7 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
         reply = '狗都不做之leetcode，输入指令 lc 获取leetcode每日一天的简要信息和url，输入指令 leetcode获取详细信息及url'
     elif content == '色图':
         reply = '色图，输入指令 色图 or 涩图 or 美女 or 来点色图 or 来点涩图 or 来点美女 即可获取一张色图\n\
+输入指令 搜色图 [keyword] 例如 搜色图 黑丝 即可搜索色图\n \
 输入指令 r18 on 即可开启r18模式，输入指令 r18 down 即可关闭'
     elif content == '福利':
         reply = '福利，输入指令 福利 or 来点福利 即可获取一张福利图'
@@ -81,6 +83,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
         reply = '丢，输入指令 丢 @[一个人]，那就可以丢他了'
     elif content == '爬':
         reply = '爬，输入指令 爬 @[一个人]，那就可以让他爬了'
+    elif content == 'nokia':
+        reply = 'nokia，输入指令 nokia[句子]，即可得到一张nokia短信图片'
     elif content == 'help':
         reply = '你指定是有什么大病'
     else:

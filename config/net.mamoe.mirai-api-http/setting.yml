@@ -1,7 +1,7 @@
 cors: 
   - '*'
 host: localhost
-port: 8080
+port: 8081
 qq: 246987206
 authKey: an13154e4
 cacheSize: 4096
