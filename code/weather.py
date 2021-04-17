@@ -1,3 +1,6 @@
+import asyncio
+import json
+
 import aiohttp
 from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
@@ -15,36 +18,55 @@ params = {
     "output": "JSON"
     }
 
-async def get_now_weather()->str:
+async def get_now_weather(city_adcode=310114)->str:
     params["extensions"] = "base"
+    params["city"] = city_adcode
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, params=params) as resp:
             data = await resp.json()
             # print(data)
             data = data["lives"][0]
-            result = "天气：{} 温度：{}°C 风向：{} 风力：{}级 湿度：{}% \n数据发布于{}".format(
-                data["weather"],data["temperature"],data["winddirection"],data["windpower"],data["humidity"],data["reporttime"]
-            )
-            return (result)
+            if data == []:
+                return ''
+            try:
+                if data['province'] in data['city']:
+                    result = '\n' + data['city'] + ':' + "天气：{} 温度：{}°C 风向：{} 风力：{}级 湿度：{}% \n数据更新于{}".format(
+                        data["weather"], data["temperature"], data["winddirection"], data["windpower"], data["humidity"], data["reporttime"]
+                    )
+                else:
+                    result = '\n' + data['province']  + data['city'] + ':' + "天气：{} 温度：{}°C 风向：{} 风力：{}级 湿度：{}% \n数据更新于{}".format(
+                        data["weather"], data["temperature"], data["winddirection"], data["windpower"], data["humidity"], data["reporttime"]
+                    )
+            except:
+                return ''
+            return result
 
-async def get_forecast_weather()->str:
+async def get_forecast_weather(city_adcode=310114)->str:
     params["extensions"] = "all"
+    params["city"] = city_adcode
     async with aiohttp.ClientSession() as session:
         async with session.get(url=url, params=params) as resp:
             data = await resp.json()
             data = data["forecasts"][0]
-            date = "数据更新于{} \n".format(data["reporttime"])
-            data = data["casts"]
-            result = "\n"
-            print(data)
-            for i in range(4):
-                ndata = data[i]
-                result += "{} 白天天气：{} 温度：{}°C 风力：{} 夜晚天气：{} 温度：{}°C 风力：{}级\n".format(
-                    ndata["date"],ndata["dayweather"],ndata["daytemp"],ndata["daypower"],ndata["nightweather"],ndata["nighttemp"],ndata["nightpower"]
-                )
-            result += date
+            # print(data)
+            if data['casts'] == []:
+                return ''
+            try:
+                date = "数据更新于{} \n".format(data["reporttime"])
+                if data['province'] in data['city']:
+                    result = '\n' + data['city'] + ':'
+                else:
+                    result = '\n' + data['province']  + data['city'] + ':'
+                data = data["casts"]
+                for i in range(3):
+                    ndata = data[i]
+                    result += '\n' + "{} 白天天气：{} 温度：{}°C 风力：{} 夜晚天气：{} 温度：{}°C 风力：{}级".format(
+                        ndata["date"],ndata["dayweather"],ndata["daytemp"],ndata["daypower"],ndata["nightweather"],ndata["nighttemp"],ndata["nightpower"]
+                    )
+                result += date
+            except:
+                return ''
             return result
-
 
 
 @bcc.receiver("GroupMessage")
@@ -54,12 +76,54 @@ async def weather(
     group: Group, member: Member,
 ):  
     try:
+        li =['区', '县', '省', '市', '自治区', '特别行政区', '自治县', '自治州', '市辖区']
         if message.asDisplay() == "天气":
-            reply = await get_now_weather()
-        if message.asDisplay() == "天气预报":
-            reply = await get_forecast_weather()
-        await app.sendGroupMessage(group,MessageChain.create([
-            At(member.id),Plain(reply)
-        ]))
-    except:
-        pass
+            await app.sendGroupMessage(group,MessageChain.create([
+                At(member.id),Plain(await get_now_weather())
+            ]))
+        elif message.asDisplay() == "天气预报":
+            await app.sendGroupMessage(group,MessageChain.create([
+                At(member.id),Plain(await get_forecast_weather())
+            ]))
+        elif message.asDisplay().startswith("天气预报"):
+            f=open('city.json',encoding='utf-8')
+            data=json.load(f)
+            f.close()
+            city = message.asDisplay()[4:].strip()
+            for i in li:
+                if city in i:
+                    await app.sendGroupMessage(group,MessageChain.create([
+                        At(member.id),Plain('你肯定是有什么大病')
+                    ]))
+                    return
+            reply = ''
+            for k, v in data.items():
+                if city in k:
+                    reply += await get_forecast_weather(int(v))
+            if reply == '':
+                reply = '要么这不是个城市，要么你肯定有什么大病'
+            await app.sendGroupMessage(group,MessageChain.create([
+                At(member.id),Plain(reply)
+            ]))
+        elif message.asDisplay().startswith("天气"):
+            f=open('city.json',encoding='utf-8')
+            data=json.load(f)
+            f.close()
+            city = message.asDisplay()[2:].strip()
+            for i in li:
+                if city in i:
+                    await app.sendGroupMessage(group,MessageChain.create([
+                        At(member.id),Plain('你肯定是有什么大病')
+                    ]))
+                    return
+            reply = ''
+            for k, v in data.items():
+                if city in k:
+                    reply += await get_now_weather(int(v))
+            if reply == '':
+                reply = '要么这不是个城市，要么你肯定有什么大病'
+            await app.sendGroupMessage(group,MessageChain.create([
+                At(member.id),Plain(reply)
+            ]))
+    except Exception as e:
+        print(e)

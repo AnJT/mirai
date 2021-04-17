@@ -83,7 +83,7 @@ async def sou_setu(
         data['r18'][index]=0
         with open('mydata.json','w+') as f:
             json.dump(data,f,ensure_ascii=False, indent=4, separators=(',', ':'))
-    result = await get_setu(r18, saying.asDisplay())
+    result = await get_setu(r18, saying.asDisplay().strip())
     if result == 'xs,没找到':
         await app.sendGroupMessage(group, MessageChain.create([
             At(member.id),Plain(result)
