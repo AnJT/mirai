@@ -89,7 +89,9 @@ async def weather(
             f=open('city.json',encoding='utf-8')
             data=json.load(f)
             f.close()
-            city = message.asDisplay()[4:].strip()
+            city = ''.join(message.asDisplay()[4:].lower().strip().split())
+            if len(city) <= 1:
+                return
             for i in li:
                 if city in i:
                     await app.sendGroupMessage(group,MessageChain.create([
@@ -109,7 +111,9 @@ async def weather(
             f=open('city.json',encoding='utf-8')
             data=json.load(f)
             f.close()
-            city = message.asDisplay()[2:].strip()
+            city = ''.join(message.asDisplay()[2:].lower().strip().split())
+            if len(city) <= 1:
+                return
             for i in li:
                 if city in i:
                     await app.sendGroupMessage(group,MessageChain.create([

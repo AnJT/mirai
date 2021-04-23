@@ -7,7 +7,7 @@ from graia.broadcast import Broadcast
 from graia.broadcast.interrupt import InterruptControl
 from graia.scheduler import GraiaScheduler
 
-setting_yml_path='../config/net.mamoe.mirai-api-http/setting.yml'
+setting_yml_path = '../config/net.mamoe.mirai-api-http/setting.yml'
 with open(setting_yml_path) as f:
     setting=yaml.load(f,yaml.BaseLoader)
 

@@ -79,6 +79,10 @@ def stop(content):
         return True
     if content == '福利' or content == '来点福利':
         return True
+    if content.startswith('搜色图'):
+        return True
+    if content.startswith('课表'):
+        return True
     if content == 'help':
         return True
     return False

@@ -14,11 +14,14 @@ from startup import bcc
 
 
 def get_guess(text):
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36'
+    }
     url = "https://lab.magiconch.com/api/nbnhhsh/guess"
     data = {
         'text' : text
     }
-    response = requests.post(url, data=data)
+    response = requests.post(url, data=data, headers=headers)
     response = json.loads(response.content)
     result = text + ' maybe:\n'
     try:

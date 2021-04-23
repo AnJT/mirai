@@ -27,7 +27,7 @@ subtitle_color = (129, 212, 250, 255)
 line_rotate = -9.8
 max_line_width = 680
 max_content_height = 450
-font = ImageFont.truetype("/root/mirai/code/fonts/1.ttf", font_size)
+font = ImageFont.truetype("fonts/1.ttf", font_size)
 
 
 def image_to_byte_array(image: IMG):
@@ -58,7 +58,7 @@ def draw_subtitle(im, text: str):
 
 
 def generate_image(text: str):
-    origin_im = IMG.open("/root/mirai/code/img/nokia.png")
+    origin_im = IMG.open("img/nokia.png")
     text = text[:900]
     length = len(text)
     width, height = font.getsize(text)

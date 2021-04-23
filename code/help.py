@@ -34,6 +34,7 @@ async def help(
             Face(faceId=298),Plain('丢\n'),
             Face(faceId=298),Plain('爬\n'),
             Face(faceId=298),Plain('nokia\n'),
+            Face(faceId=298),Plain('课表\n'),
             Face(faceId=298),Plain("具体请help 功能")
         ]))
 
@@ -85,6 +86,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
         reply = '爬，输入指令 爬 @[一个人]，那就可以让他爬了'
     elif content == 'nokia':
         reply = 'nokia，输入指令 nokia[句子]，即可得到一张nokia短信图片'
+    elif content == '课表':
+        reply = '课表，输入指令 课表，即可获取当天课表，输入指令 课本[1-7] 例如 课表 1 即可获取本周星期1的课表\n输入修改学号 [学号]，即可修改学号'
     elif content == 'help':
         reply = '你指定是有什么大病'
     else:

@@ -23,7 +23,8 @@ params = {
 async def get_setu(r18:int, keyword='')->str:
     params["r18"] = r18
     params["keyword"] = ''.join(keyword.lower().strip().split())
-    async with aiohttp.ClientSession() as session:
+    conn=aiohttp.TCPConnector(verify_ssl=False)
+    async with aiohttp.ClientSession(connector=conn) as session:
         async with session.get(url=url, params=params) as resp:
             data = await resp.json()
             try:
