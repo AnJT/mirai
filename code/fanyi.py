@@ -1,15 +1,13 @@
 import hashlib
 import json
 import random
-
+import requests
 import aiohttp
 from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
 from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
 from graia.application.message.elements.internal import At, Image, Plain
-
-from picturetranslation import get_reply
 from startup import bcc, inc
 
 url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
@@ -20,6 +18,33 @@ toLang = 'zh'
 cuid = 'APICUID'
 salt = random.randint(32768, 65536)
 
+async def get_token():
+    # client_id 为官网获取的AK， client_secret 为官网获取的SK
+    host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=Z2PGjO14zm8HlkjyDeV8lxAB&client_secret=OKWtWiEPYSrfaROdcZYs581lnrgGpFpD'
+    response = requests.get(host)
+    if response:
+        return response.json()['access_token']
+
+async def get_ocr(url):
+    request_url = "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+
+    params = {
+        'url': '',
+        'paragraph': True
+    }
+    params['url'] = url   
+    access_token = await get_token()
+    print(access_token)
+    request_url = request_url + "?access_token=" + access_token
+    print(request_url)
+    headers = {'content-type': 'application/x-www-form-urlencoded'}
+    response = requests.post(request_url, data=params, headers=headers)
+    result = ''
+    if response:
+        data = response.json()['words_result']
+        for words in data:
+            result += words['words']
+    return result
 
 async def get_fanyi(content):
     sign = appid + content + str(salt) + secret_key
@@ -72,10 +97,6 @@ def stop(content):
         return True
     if content == '福利' or content == '来点福利':
         return True
-    if content.startswith('搜色图'):
-        return True
-    if content.startswith('课表'):
-        return True
     if content == 'help':
         return True
     return False
@@ -109,8 +130,8 @@ async def fanyi(
             try:
                 img_url = content.messageChain.get(Image)[0].url
                 print(img_url)
-                reply = get_reply(img_url)
-                print(reply)
+                ocr = await get_ocr(img_url)
+                reply = await get_fanyi(ocr)
                 await app.sendGroupMessage(group, MessageChain.create([
                     At(member.id), Plain(reply)
                 ]))
