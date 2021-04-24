@@ -12,10 +12,7 @@ config/Console/AutoLogin.yml
 code/samples
 code/__pycache__
 code/courses.py
-code/crack_captcha.py
+code/autoLogin.py
 code/encrypt.py
-code/find_chars.py
-code/get_cookies.py
-code/match_samples.py
 code/concat.png
 code/image.png
