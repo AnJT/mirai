@@ -14,7 +14,7 @@ my qq bot
 - <a href="code/fanyi.py">fanyi</a>百度翻译
 - <a href="code/guess.py">guess</a>根据首字母来推测信息
 - <a href="code/jinyan.py">jinyan</a>若刷屏就禁言
-- <a href="code/lc">leetcode</a>推送leetcode每日一题
+- <a href="code/lc.py">leetcode</a>推送leetcode每日一题
 - <a href="code/nokia.py">nokia</a>生成nokia短信图片
 - <a href="code/pa.py">pa</a>根据头像生成pa.png并发送
 - <a href="code/setu.py">setu</a>搜索并发送懂得都懂的图片
