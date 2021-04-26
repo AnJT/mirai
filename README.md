@@ -2,6 +2,13 @@
 
 my qq bot
 
+## 插件列表
+
+- <a href='code/chat.py'>chat</a>聊天姬气人
+- <a href='chengyu.py'>chengyu</a>成语接龙
+
+
+
 ## Linux配置mirai
 
 - ##### 安装java环境
