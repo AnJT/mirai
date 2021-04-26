@@ -2,6 +2,10 @@
 
 my qq bot
 
+## 插件列表
+
+- <a href="code/chat.py">chat</a>聊天姬气人
+
 ## Linux配置mirai
 
 - ##### 安装java环境
