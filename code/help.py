@@ -87,7 +87,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
     elif content == 'nokia':
         reply = 'nokia，输入指令 nokia[句子]，即可得到一张nokia短信图片'
     elif content == '课表':
-        reply = '课表，输入指令 课表，即可获取当天课表，输入指令 课本[1-7] 例如 课表 1 即可获取本周星期1的课表\n输入修改学号 [学号]，即可修改学号'
+        reply = '课表，输入指令 课表，即可获取当天课表，输入指令 课表[1-7] 例如 课表 1 即可获取本周星期1的课表，输入指令 课表[1-7] [1-17]\
+例如 课表 6 9 即可获取第9周星期六的课表\n输入修改学号 [学号]，即可修改学号'
     elif content == 'help':
         reply = '你指定是有什么大病'
     else:

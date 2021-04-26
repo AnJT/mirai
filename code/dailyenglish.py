@@ -22,7 +22,7 @@ async def get_daily_english():
         async with session.get(url=url,params=params) as resp:
             data = await resp.json()
             try:
-                return '\n'+data['newslist'][0]['content']+'\n'+data['newslist'][0]['note']
+                return data['newslist'][0]['content']+'\n'+data['newslist'][0]['note']
             except Exception as e:
                 raise e
 
