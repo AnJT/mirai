@@ -35,6 +35,7 @@ async def help(
             Face(faceId=298),Plain('爬\n'),
             Face(faceId=298),Plain('nokia\n'),
             Face(faceId=298),Plain('课表\n'),
+            Face(faceId=298),Plain('搜图\n'),
             Face(faceId=298),Plain("具体请help 功能")
         ]))
 
@@ -89,6 +90,8 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
 例如 课表 6 9 即可获取第9周星期六的课表\n输入修改学号 [学号]，即可修改学号'
     elif content == 'help':
         reply = '你指定是有什么大病'
+    elif content == '搜图':
+        reply = '搜图，输入指令 搜图，再发一张图片，即可搜索相似图片的详细信息'
     else:
         reply = '好小子，这个功能就交给你了'
     await app.sendGroupMessage(group, MessageChain.create([

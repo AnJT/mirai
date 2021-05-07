@@ -20,6 +20,7 @@ my qq bot
 - <a href="code/pa.py">pa</a>根据头像生成pa.png并发送
 - <a href="code/setu.py">setu</a>搜索并发送懂得都懂的图片
 - <a href="code/weather.py">weather</a>天气预报
+- <a href="code/image-search.py">搜图</a>搜索图片的详细信息
 
 ## Linux配置mirai
 
