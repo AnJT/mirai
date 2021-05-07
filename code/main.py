@@ -13,6 +13,7 @@ from fuli import fuli
 from guess import guess
 from help import help, help_fun
 from huifu import huifu
+from image_search import image_search
 from jinyan import jinyan
 from lc import daily_lc, daily_lc_scheduled
 from nokia import nokia
