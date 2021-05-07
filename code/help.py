@@ -65,8 +65,6 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
         reply = '每日英语，输入指令 daily english 即可获取一句每日英语，不准睡，快学！'
     elif content == '青年大学习':
         reply = '狗都不做之青年大学习，输入指令 青年大学习 or 大学习 即可获取青年大学习最新一期的title和url'
-    elif content == '毒鸡汤':
-        reply = '毒鸡汤，输入指令 毒鸡汤 即可获取一句毒鸡汤'
     elif content == 'leetcode':
         reply = '狗都不做之leetcode，输入指令 lc 获取leetcode每日一天的简要信息和url，输入指令 leetcode获取详细信息及url'
     elif content == '色图':

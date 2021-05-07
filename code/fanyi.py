@@ -1,13 +1,15 @@
 import hashlib
 import json
 import random
-import requests
+
 import aiohttp
+import requests
 from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
 from graia.application.interrupts import GroupMessageInterrupt
 from graia.application.message.chain import MessageChain
 from graia.application.message.elements.internal import At, Image, Plain
+
 from startup import bcc, inc
 
 url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
@@ -82,8 +84,6 @@ def stop(content):
     if ''.join(content.lower().strip().split()) == "dailyenglish":
         return True
     if content == '青年大学习' or content == '大学习':
-        return True
-    if content == '毒鸡汤':
         return True
     if content == 'lc' or content == 'leetcode':
         return True

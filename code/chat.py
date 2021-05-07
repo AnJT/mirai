@@ -65,8 +65,6 @@ def stop(content):
         return True
     if content == '青年大学习' or content == '大学习':
         return True
-    if content == '毒鸡汤':
-        return True
     if content == 'lc' or content == 'leetcode':
         return True
     if ''.join(content.lower().strip().split()) == "r18down" or ''.join(content.lower().strip().split()) == "r18on":
