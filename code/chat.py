@@ -81,6 +81,10 @@ def stop(content):
         return True
     if content.startswith('课表'):
         return True
+    if content.startswith('垃圾分类'):
+        return True
+    if content.startswith('搜图'):
+        return True
     if content == 'help':
         return True
     return False

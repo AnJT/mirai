@@ -18,6 +18,7 @@ from jinyan import jinyan
 from lc import daily_lc, daily_lc_scheduled
 from nokia import nokia
 from pa import pa
+from rubbish import rubbish
 from setu import setu, setu_db
 from startup import app, loop
 from weather import weather
