@@ -6,21 +6,38 @@ my qq bot
 
 
 - <a href="code/chat.py">chat</a>聊天姬气人
-- <a href="code/chengyu.py">chengyu</a>成语接龙
-- <a href="code/choice.py">choice</a>选择
-- <a href="code/compile.py">compile</a>网络编译器（菜鸟教程）
-- <a href="code/dailyenglish.py">dailyenglish</a>获取每日英语
-- <a href="code/daxuexi.py">daxuexi</a>获取青年大学习最新一期的信息
-- <a href="code/diu.py">diu</a>根据头像生成diu.png并发送
-- <a href="code/fanyi.py">fanyi</a>百度翻译
-- <a href="code/guess.py">guess</a>根据首字母来推测信息
-- <a href="code/jinyan.py">jinyan</a>若刷屏就禁言
-- <a href="code/lc.py">leetcode</a>推送leetcode每日一题
-- <a href="code/nokia.py">nokia</a>生成nokia短信图片
-- <a href="code/pa.py">pa</a>根据头像生成pa.png并发送
+
+- <a href="code/baozhi.py">baozhi</a>每日简报
+
 - <a href="code/setu.py">setu</a>搜索并发送懂得都懂的图片
-- <a href="code/weather.py">weather</a>天气预报
+
+- <a href="code/fuli.py">fuli</a>=发送另一个次元懂得都懂的图片
+
 - <a href="code/image-search.py">搜图</a>搜索图片的详细信息
+
+- <a href="code/fanyi.py">fanyi</a>百度翻译
+
+- <a href="code/chengyu.py">chengyu</a>成语接龙
+
+- <a href="code/compile.py">compile</a>网络编译器（菜鸟教程）
+
+- <a href="code/dailyenglish.py">dailyenglish</a>获取每日英语
+
+- <a href="code/guess.py">guess</a>根据首字母来推测信息
+
+- <a href="code/lc.py">leetcode</a>推送leetcode每日一题
+
+- <a href="code/diu.py">diu</a>根据头像生成diu.png并发送
+
+- <a href="code/nokia.py">nokia</a>生成nokia短信图片
+
+- <a href="code/pa.py">pa</a>根据头像生成pa.png并发送
+
+- <a href="code/weather.py">weather</a>天气预报
+
+- <a href="code/choice.py">choice</a>选择
+
+  
 
 ## Linux配置mirai
 
