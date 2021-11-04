@@ -4,10 +4,10 @@ from chat import xiaolan
 from chengyu import chengyu
 from choice import choice
 from compile import compile
-from courses import courses_db, courses_search, courses
+from courses import courses_db, courses_search, courses, selectId
 # from electricity import search_elec, search_elec2, update_scheduled
 from dailyenglish import daily_english
-from baozhi import daily_briefing
+from baozhi import daily_briefing, daily_briefing_scheduled
 from diu import diu
 from fanyi import fanyi
 from fuli import fuli
@@ -20,6 +20,7 @@ from pa import pa
 from setu import setu, setu_db
 from startup import app, loop
 from weather import weather
+from pronhub import searchPornhub, searchPornhubFriend
 
 app.launch_blocking()
 loop.run_forever()

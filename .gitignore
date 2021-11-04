@@ -16,8 +16,11 @@ code/autoLogin.py
 code/encrypt.py
 code/concat.png
 code/image.png
-code/mydata.json
-code/students.json
+code/json/mydata.json
+code/json/students.json
+code/json/id2name.json
+code/json/kebiao.json
+test.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

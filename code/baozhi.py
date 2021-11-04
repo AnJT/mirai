@@ -7,7 +7,8 @@ from graia.application import GraiaMiraiApplication
 from graia.application.group import Group, Member
 from graia.application.message.chain import MessageChain
 from graia.application.message.elements.internal import At, Image, Plain
-from graia.scheduler.timers import crontabify
+from graia.scheduler.timers import (crontabify, every_custom_hours,
+                                    every_custom_minutes, every_custom_seconds)
 import random
 import time
 import datetime
@@ -15,7 +16,7 @@ import requests
 from fake_useragent import UserAgent
 from bs4 import BeautifulSoup as BS
 
-from startup import app, bcc, scheduler
+from startup import app, bcc, scheduler, loop
 
 ua = UserAgent().random
 
@@ -35,13 +36,19 @@ def get_new_cookies():
                        allow_redirects=False)
     cookies = rst.cookies.get_dict()
     return cookies
-
+    
 async def news_result(html):
     soup = BS(html, 'html.parser')
     ul = soup.find(class_="news-list")
     for li in ul.find_all('li'):
-        url = li.a['href']
-        return url
+        try:
+            url = li.a['href']
+            div = li.find_all('div')[1]
+            if div.div.a.text == '易即今日':
+                return url
+            print(div.div.a.text)
+        except Exception as e:
+            print(e)
 
 async def url_decode(r): 
     url = 'https://weixin.sogou.com' + r
@@ -111,15 +118,17 @@ async def toBtyes(resp):
     return result
 
 
-@scheduler.schedule(crontabify("00 08 02 * *"))
+@scheduler.schedule(every_custom_minutes(59))
 async def daily_briefing_scheduled():
-    f=open('mydata.json')
-    data=json.load(f)
+    # f=open('./json/mydata.json')
+    # data=json.load(f)
     img_path = await getBriefing()
-    await app.sendGroupMessage(data['group']["1020661362"], MessageChain.create([
-        Image.fromLocalFile(img_path)
-    ]))
-    f.close()
+    # await app.sendGroupMessage(data['group']["1020661362"], MessageChain.create([
+    #     Image.fromLocalFile(img_path)
+    # ]))
+    # f.close()
+
+# loop.run_until_complete(getBriefing())
 
 @bcc.receiver("GroupMessage")
 async def daily_briefing(
@@ -128,7 +137,7 @@ async def daily_briefing(
     group: Group, member: Member,
 ):  
     if ''.join(message.asDisplay().lower().strip().split()) == "今日简报":
-        url = '/root/mcl/code/img/picture.png'
+        url = './img/picture.png'
         print(url)
         await app.sendGroupMessage(group, MessageChain.create([
             Image.fromLocalFile(url)

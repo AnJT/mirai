@@ -9,9 +9,11 @@ my qq bot
 
 - <a href="code/baozhi.py">baozhi</a>每日简报
 
+- <a href="code/pronhub.py">pornhub</a>搜索并发送图片(只限私聊)+视频url
+
 - <a href="code/setu.py">setu</a>搜索并发送懂得都懂的图片
 
-- <a href="code/fuli.py">fuli</a>=发送另一个次元懂得都懂的图片
+- <a href="code/fuli.py">fuli</a>发送另一个次元懂得都懂的图片
 
 - <a href="code/image-search.py">搜图</a>搜索图片的详细信息
 
