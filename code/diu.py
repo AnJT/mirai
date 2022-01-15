@@ -70,7 +70,7 @@ def rotate(image, angle, center=None, scale=1.0): #1
     return rotated #7
 
 def get_bytes(qq):
-    hh_img = cv2.imread('/root/mcl/code/img/hh.png', cv2.IMREAD_UNCHANGED)
+    hh_img = cv2.imread('/root/mirai/code/img/hh.png', cv2.IMREAD_UNCHANGED)
     qq_img = url_to_image(img_url.replace('##',qq))
     qq_img_circle = img_deal(qq_img)
     qq_img_circle = rotate(qq_img_circle, random.randint(0, 360))
@@ -96,13 +96,14 @@ async def diu(
     saying: MessageChain
 ):
     try:
+        print("diu")
         at = saying.get(At)
         print(at)
         for i in at:
             qq = i.target
             print(qq)
             bs = get_bytes(str(qq))
-            # print(type(bs))
+            print(type(bs))
             await app.sendGroupMessage(group, MessageChain.create([
                 Image.fromUnsafeBytes(bs)
             ]))

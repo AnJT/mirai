@@ -67,7 +67,7 @@ def rotate(image, angle, center=None, scale=1.0): #1
     return rotated #7
 
 def get_bytes(qq):
-    pa_url = '/root/mcl/code/img/pa'
+    pa_url = '/root/mirai/code/img/pa'
     pa_url += str(random.randint(1, 9)) + '.png'
     pa_img = cv2.imread(pa_url, cv2.IMREAD_UNCHANGED)
     qq_img = url_to_image(img_url.replace('##',qq))

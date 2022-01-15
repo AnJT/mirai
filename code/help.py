@@ -66,7 +66,7 @@ Scala,C#,Ruby,C++,C,Java,Python3,Python,PHP'
 输入指令 搜色图 [keyword] 例如 搜色图 黑丝 即可搜索色图\n \
 输入指令 r18 on 即可开启r18模式，输入指令 r18 down 即可关闭'
     elif content == '福利':
-        reply = '福利，输入指令 福利 or 来点福利 即可获取一张福利图'
+        reply = '福利，输入指令 福利  即可获取一张福利图, 福利 -- change phone | pc ,改变输出图片格式}'
     elif content == '天气':
         reply = '天气，输入指令 天气 获取当天天气状况，输入指令 天气预报 获取近四天天气状况'
     elif content == '翻译':
